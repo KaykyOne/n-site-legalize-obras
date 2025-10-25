@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root{
+    --primary-color: #227899;
+    --secondary-color: #2A2D4C;
+}
+
+@theme {
+  --color-primary-color: #227899;
+  --color-secondary-color: #2A2D4C;
+}
+
+.fade-in {
+  animation: aparecer 0.5s ease-in-out forwards;
+}
+
+.fade-in-contrario {
+  animation: aparecer-ao-contrario 0.5s ease-in-out forwards;
+}
+
+
+@keyframes aparecer {
+  0% {
+    transform: translateY(-1000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes aparecer-ao-contrario {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
