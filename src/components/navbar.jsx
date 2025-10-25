@@ -36,7 +36,7 @@ export default function Navbar() {
                         <a href="#" className='hover:border-b'>Blog</a>
                     </nav >
                     <Button type={'whatsapp'} className='hidden lg:flex'>
-                        <img src="/icon-whatsapp.png" alt="WhatsApp Icon" className='w-5 h-5 mr-2' />
+                        <img src="/n-site-legalize-obras/icon-whatsapp.png" alt="WhatsApp Icon" className='w-5 h-5 mr-2' />
                         Contato
                     </Button>
                     <button
