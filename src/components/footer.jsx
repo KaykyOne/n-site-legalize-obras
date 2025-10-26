@@ -1,5 +1,10 @@
 import React from 'react'
 
+let url = '';
+if (typeof window !== "undefined") {
+    url = window.location.href.origin || '';
+}
+
 export default function Footer() {
     return (
         <footer className='bg-black w-full flex flex-col gap-10 items-center justify-center px-6 md:px-20 lg:px-40 text-white min-h-[300px] pt-10 pb-10'>
@@ -26,10 +31,10 @@ export default function Footer() {
                     </div>
 
                     <div className='h-full w-full flex flex-col gap-2 text-sm items-center sm:items-start'>
-                        <a href="#" className='hover:text-primary-color transition-colors'>Home</a>
-                        <a href="#" className='hover:text-primary-color transition-colors'>Sobre</a>
-                        <a href="#" className='hover:text-primary-color transition-colors'>Dúvidas</a>
-                        <a href="#" className='hover:text-primary-color transition-colors'>Blog</a>
+                        <a href={`${url}/`} className='hover:text-primary-color transition-colors'>Home</a>
+                        <a href={`${url}/sobre`} className='hover:text-primary-color transition-colors'>Sobre</a>
+                        <a href={`${url}/duvidas`} className='hover:text-primary-color transition-colors'>Dúvidas</a>
+                        <a href={`${url}/blog`} className='hover:text-primary-color transition-colors'>Blog</a>
                     </div>
                 </div>
             </div>

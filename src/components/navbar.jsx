@@ -3,17 +3,21 @@ import Button from './button'
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    let url = '';
+    if (typeof window !== "undefined") {
+        url = window.location.href.origin || '';
+    }
 
     const Menu = () => {
         return (
             <nav className='gap-6 fade-in fade-in mr-6 text-secondary-color mt-[70px] bg-white font-semibold flex flex-col w-full items-center fixed pt-4 pb-4 lg:hidden z-20 shadow-2xl'>
-                <a href="/" className='hover:border-b'>Home</a>
-                <a href="/sobre" className='hover:border-b'>Sobre</a>
-                <a href="/duvidas" className='hover:border-b'>Dúvidas</a>
-                <a href="/blog" className='hover:border-b'>Blog</a>
+                <a href={`${url}/`} className='hover:border-b'>Home</a>
+                <a href={`${url}/sobre`} className='hover:border-b'>Sobre</a>
+                <a href={`${url}/duvidas`} className='hover:border-b'>Dúvidas</a>
+                <a href={`${url}/blog`} className='hover:border-b'>Blog</a>
                 <a className='w-full pl-5 pr-5'>
                     <Button type={'whatsapp'} className='!w-full'>
-                        <img src="/icon-whatsapp.png" alt="WhatsApp Icon" className='w-5 h-5 mr-2' />
+                        <img src={`${url}/icon-whatsapp.png`} alt="WhatsApp Icon" className='w-5 h-5 mr-2' />
                         Contato
                     </Button>
                 </a>
