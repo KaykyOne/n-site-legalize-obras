@@ -36,7 +36,7 @@ import Button from "../components/button";
                             className={"!text-lg sm:!text-xl !font-normal !uppercase flex items-center justify-center w-full sm:w-auto"}
                         >
                             <img
-                                src="/n-site-legalize-obras/icon-whatsapp.png"
+                                src="/icon-whatsapp.png"
                                 alt="WhatsApp Icon"
                                 class="w-5 h-5 mr-2 group-hover:invert"
                             />
@@ -47,9 +47,68 @@ import Button from "../components/button";
             </div>
         </div>
 
-        <!-- <div class="px-6 md:px-20 lg:px-40 -mt-70 md:mt-[-30px] relative fade-in-contrario">
-            <div class="bg-primary-color min-h-[300px] md:min-h-[500px] rounded-md"></div>
-        </div> -->
+        <!-- Seção com divisões lado a lado: azul, preta, e branca (2 linhas) -->
+        <div class="px-6 md:px-20 lg:px-40 -mt-70 md:mt-[-30px] relative fade-in-contrario">
+            <div class="min-h-[400px] md:min-h-[600px] flex flex-col md:flex-row overflow-hidden border border-black rounded-l-lg">
+                <!-- Seção Azul com gradiente de baixo para cima -->
+                <div class="bg-linear-0 from-secondary-color to-primary-color flex-2 flex items-center justify-center p-8 md:p-12 rounded-l-lg">
+                    <div class="max-w-lg">
+                        <p class="text-gray-300 text-sm md:text-base mb-2">Engaje as suas construções e reformas de forma que não</p>
+                        <h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                            Custe tanto quanto a própria obra!
+                        </h2>
+                        <div class="flex gap-4 items-start mb-6">
+                            <div class="w-1 bg-white h-24 shrink-0"></div>
+                            <p class="text-white text-sm md:text-base leading-relaxed">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis ullam qui non nihil excepturi doloremque, ea, soluta, veritatis eaque porro beatae! Laborum magni hic ipsam fuga odit necessitatibus exercitationem consectetur!
+                            </p>
+                        </div>
+                        <Button
+                            type={"transparente"}
+                            className={"!text-lg sm:!text-xl !font-normal !uppercase flex items-center justify-center"}
+                        >
+                            <img
+                                src="/icon-whatsapp.png"
+                                alt="WhatsApp Icon"
+                                class="w-5 h-5 mr-2 group-hover:invert"
+                            />
+                            FALE COM UM ESPECIALISTA
+                        </Button>
+                    </div>
+                </div>
+                
+                <!-- Seção Preta -->
+                <div class="bg-black flex-[0.7] flex items-center justify-center p-8">
+                    <div class="text-center -rotate-90">
+                        <p class="text-white text-5xl md:text-7xl font-bold">200%</p>
+                        <p class="text-white text-xl md:text-2xl mt-2">de <span class="font-bold">EFICIÊNCIA</span></p>
+                    </div>
+                </div>
+                
+                <!-- Seção Branca dividida em 2 linhas (uma enombaixo da outra) -->
+                <div class="bg-white flex-[0.7] flex flex-col">
+                    <div class="flex-1 flex items-center justify-center border-b border-gray-200 p-6">
+                        <div class="text-center">
+                            <p class="text-black text-4xl md:text-6xl font-bold mb-3">-50%</p>
+                            <p class="text-primary-color text-lg md:text-xl whitespace-nowrap">
+                                <span class="font-bold">TEMPO</span> de processo
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex-1 flex items-center justify-center p-6">
+                        <div class="text-center">
+                            <p class="text-black text-4xl md:text-6xl font-bold mb-3">+40%</p>
+                            <p class="text-primary-color text-xl md:text-2xl">
+                                de <span class="font-bold">AGILIDADE</span>
+                            </p>
+                            <p class="text-primary-color text-xl md:text-2xl">
+                                nos processos
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     </div>

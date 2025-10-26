@@ -8,6 +8,7 @@
 @theme {
   --color-primary-color: #227899;
   --color-secondary-color: #2A2D4C;
+  --font-family-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
 
 .fade-in {
