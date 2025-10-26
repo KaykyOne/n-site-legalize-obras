@@ -1,0 +1,189 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/button';
+
+// Dados de exemplo para as postagens do blog
+const posts = [
+    {
+        id: 1,
+        title: "Como Reduzir Custos com INSS de Obra Legalmente",
+        excerpt: "Descubra as estratégias mais eficientes para economizar até 80% nos custos com contribuições previdenciárias em suas obras.",
+        date: "2025-10-20",
+        category: "Economia",
+        image: "/img-back-home.png",
+        readTime: "5 min"
+    },
+    {
+        id: 2,
+        title: "Regularização de Obras: Por Onde Começar?",
+        excerpt: "Um guia completo sobre os primeiros passos para legalizar sua construção e evitar problemas com o fisco.",
+        date: "2025-10-15",
+        category: "Regularização",
+        image: "/img-back-home.png",
+        readTime: "8 min"
+    },
+    {
+        id: 3,
+        title: "Novas Regras do INSS para Construção Civil em 2025",
+        excerpt: "Entenda as mudanças na legislação e como sua empresa pode se adaptar para manter a conformidade.",
+        date: "2025-10-10",
+        category: "Legislação",
+        image: "/img-back-home.png",
+        readTime: "6 min"
+    },
+    {
+        id: 4,
+        title: "Documentação Necessária para Legalizar uma Obra",
+        excerpt: "Lista completa de documentos e certidões necessárias para regularizar sua construção.",
+        date: "2025-10-05",
+        category: "Documentação",
+        image: "/img-back-home.png",
+        readTime: "7 min"
+    },
+    {
+        id: 5,
+        title: "Cases de Sucesso: Empresas que Economizaram Milhares",
+        excerpt: "Conheça histórias reais de empresas que reduziram drasticamente seus custos com INSS de obra.",
+        date: "2025-09-28",
+        category: "Cases",
+        image: "/img-back-home.png",
+        readTime: "4 min"
+    },
+    {
+        id: 6,
+        title: "Erros Comuns na Gestão de Obras e Como Evitá-los",
+        excerpt: "Aprenda com os erros mais frequentes cometidos por construtoras e como sua empresa pode se prevenir.",
+        date: "2025-09-20",
+        category: "Gestão",
+        image: "/img-back-home.png",
+        readTime: "10 min"
+    }
+];
+
+const categories = ["Todas", "Economia", "Regularização", "Legislação", "Documentação", "Cases", "Gestão"];
+---
+
+<Layout>
+    <div class="w-full min-h-screen flex flex-col bg-gray-50">
+        <!-- Hero Section -->
+        <div class="relative">
+            <div class="absolute w-full h-full">
+                <div class="absolute bg-black/70 w-full h-full backdrop-blur-sm"></div>
+                <img class="w-full h-full object-cover" src="./img-back-home.png" alt="Fundo"/>
+            </div>
+
+            <div class="relative flex flex-col px-6 md:px-20 lg:px-40">
+                <div class="pt-32 md:pt-40 pb-20 md:pb-32 text-white z-10 text-center md:text-left">
+                    <h4 class="text-2xl sm:text-3xl md:text-4xl font-semibold mb-2 text-gray-300">Nosso</h4>
+                    <h1 class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl uppercase font-bold leading-tight mb-4">
+                        BLOG
+                    </h1>
+                    <p class="text-neutral-300 mt-6 text-base sm:text-lg max-w-2xl">
+                        Fique por dentro das últimas novidades, dicas e informações sobre legalização de obras e INSS
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtros de Categoria -->
+        <div class="px-6 md:px-20 lg:px-40 py-8 bg-white border-b border-gray-200 fade-in-contrario">
+            <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                {categories.map((category) => (
+                    <button 
+                        class="px-6 py-2 rounded-sm border-2 border-primary-color text-primary-color hover:bg-primary-color hover:text-white transition-all duration-200 font-semibold text-sm uppercase"
+                        data-category={category}
+                    >
+                        {category}
+                    </button>
+                ))}
+            </div>
+        </div>
+
+        <!-- Grid de Postagens -->
+        <div class="px-6 md:px-20 lg:px-40 py-12 fade-in-contrario">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {posts.map((post) => (
+                    <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer border border-gray-200">
+                        <!-- Imagem do Post -->
+                        <div class="relative h-48 overflow-hidden">
+                            <img 
+                                src={post.image} 
+                                alt={post.title}
+                                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                            />
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-primary-color text-white px-3 py-1 rounded-sm text-xs font-semibold uppercase">
+                                    {post.category}
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Conteúdo do Card -->
+                        <div class="p-6">
+                            <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                                <span class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm">calendar_today</span>
+                                    {new Date(post.date).toLocaleDateString('pt-BR')}
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm">schedule</span>
+                                    {post.readTime}
+                                </span>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-secondary-color mb-3 leading-tight hover:text-primary-color transition-colors">
+                                {post.title}
+                            </h3>
+
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                                {post.excerpt}
+                            </p>
+
+                            <a 
+                                href={`/blog/${post.id}`}
+                                class="inline-flex items-center gap-2 text-primary-color font-semibold text-sm uppercase hover:gap-3 transition-all duration-200"
+                            >
+                                Ler mais
+                                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                            </a>
+                        </div>
+                    </article>
+                ))}
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="px-6 md:px-20 lg:px-40 py-16 bg-linear-to-r from-secondary-color to-primary-color">
+            <div class="text-center text-white">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Quer saber mais sobre como economizar na sua obra?
+                </h2>
+                <p class="text-lg mb-8 text-gray-200">
+                    Fale com um de nossos especialistas e descubra como reduzir seus custos legalmente
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <Button
+                        type={"transparente"}
+                        className={"text-lg! sm:text-xl! font-normal! uppercase! flex items-center justify-center"}
+                    >
+                        <img
+                            src="/icon-whatsapp.png"
+                            alt="WhatsApp Icon"
+                            class="w-5 h-5 mr-2 group-hover:invert"
+                        />
+                        FALE COM UM ESPECIALISTA
+                    </Button>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>

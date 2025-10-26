@@ -1,0 +1,218 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/button";
+
+// Perguntas e respostas organizadas por categoria
+const faqCategories = [
+    {
+        title: "INSS de Obra",
+        questions: [
+            {
+                q: "O que é o INSS de obra?",
+                a: "O INSS de obra é uma contribuição previdenciária obrigatória que incide sobre o valor total da construção civil. É calculado sobre a nota fiscal e deve ser recolhido pelo contratante da obra."
+            },
+            {
+                q: "Como funciona a redução de até 80% no INSS de obra?",
+                a: "Através de estratégias legais e análise detalhada da legislação, identificamos oportunidades de otimização que podem reduzir significativamente os custos com INSS, sempre dentro da conformidade legal."
+            },
+            {
+                q: "Quem é responsável pelo pagamento do INSS de obra?",
+                a: "O contratante da obra (pessoa física ou jurídica) é o responsável pelo recolhimento do INSS sobre a construção, reforma ou ampliação."
+            },
+            {
+                q: "Qual a alíquota do INSS sobre obras?",
+                a: "A alíquota padrão é de 11% sobre o valor total da obra. No entanto, existem situações específicas que podem alterar essa base de cálculo."
+            }
+        ]
+    },
+    {
+        title: "Legalização de Obras",
+        questions: [
+            {
+                q: "Quais documentos são necessários para legalizar uma obra?",
+                a: "Os documentos básicos incluem: projeto arquitetônico, matrícula do imóvel, ART/RRT dos responsáveis técnicos, certidões negativas, e aprovação junto aos órgãos competentes. A documentação específica pode variar conforme o município."
+            },
+            {
+                q: "Quanto tempo leva para legalizar uma obra?",
+                a: "O prazo varia conforme a complexidade da obra e o município, mas geralmente leva de 3 a 6 meses. Nossa assessoria pode reduzir esse tempo em até 50% através de processos otimizados."
+            },
+            {
+                q: "É possível legalizar uma obra já concluída?",
+                a: "Sim, é possível regularizar obras já finalizadas através de um processo de regularização. Nossos especialistas avaliam cada caso e orientam sobre os procedimentos necessários."
+            },
+            {
+                q: "Quais são as consequências de não legalizar uma obra?",
+                a: "Obras não legalizadas podem resultar em multas, embargo, impossibilidade de venda do imóvel, problemas com financiamentos e dificuldades para obter certidões e habite-se."
+            }
+        ]
+    },
+    {
+        title: "Serviços e Atendimento",
+        questions: [
+            {
+                q: "Quais serviços a Legalize Obras oferece?",
+                a: "Oferecemos consultoria completa para legalização de obras, assessoria em INSS de construção civil, regularização de imóveis, análise de projetos, e acompanhamento de processos junto aos órgãos competentes."
+            },
+            {
+                q: "Como funciona o processo de consultoria?",
+                a: "Primeiro fazemos uma análise detalhada do seu caso, identificamos as melhores estratégias, elaboramos um plano de ação personalizado e acompanhamos todo o processo até a conclusão."
+            },
+            {
+                q: "Atendem em quais regiões?",
+                a: "Atendemos em todo o território nacional, com escritórios em diversas regiões. Entre em contato para verificar disponibilidade na sua localidade."
+            },
+            {
+                q: "Qual o investimento necessário para contratar os serviços?",
+                a: "O investimento varia conforme o tipo e complexidade do serviço. Oferecemos orçamentos personalizados sem compromisso. Entre em contato para uma avaliação gratuita."
+            }
+        ]
+    },
+    {
+        title: "Aspectos Legais",
+        questions: [
+            {
+                q: "As soluções oferecidas são legais?",
+                a: "Sim, todas as nossas estratégias são 100% baseadas na legislação vigente e respaldadas juridicamente. Trabalhamos sempre dentro da conformidade legal."
+            },
+            {
+                q: "Há garantia de resultados?",
+                a: "Oferecemos garantia de que todos os processos serão conduzidos conforme a legislação. Os resultados podem variar conforme cada caso, mas trabalhamos para maximizar os benefícios dentro das possibilidades legais."
+            },
+            {
+                q: "Vocês emitem nota fiscal?",
+                a: "Sim, somos uma empresa regularizada e emitimos nota fiscal de todos os nossos serviços."
+            },
+            {
+                q: "Como é feito o acompanhamento do processo?",
+                a: "Mantemos nossos clientes informados através de relatórios periódicos, acesso a portal do cliente e contato direto com o consultor responsável pelo seu caso."
+            }
+        ]
+    }
+];
+---
+
+<Layout>
+    <div class="w-full min-h-screen flex flex-col pt-[70px]">
+        <!-- Hero Section -->
+        <div class="flex flex-col px-6 text-start items-start w-full md:px-20 lg:px-40">
+            <h1 class="uppercase text-4xl md:text-5xl font-bold">Dúvidas frequentes</h1>
+            <h4 class="text-neutral-500">Encontre respostas para as perguntas mais frequentes sobre legalização de obras e INSS</h4>
+        </div>
+
+        <!-- FAQ Sections -->
+        <div class="px-6 md:px-20 lg:px-40 py-16 bg-gray-50 fade-in-contrario">
+            {faqCategories.map((category, categoryIndex) => (
+                <section class="mb-16 last:mb-0">
+                    <!-- Título da Categoria -->
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-2 h-16 bg-primary-color"></div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-secondary-color uppercase">
+                            {category.title}
+                        </h2>
+                    </div>
+
+                    <!-- Perguntas da Categoria -->
+                    <div class="space-y-4">
+                        {category.questions.map((item, questionIndex) => {
+                            const uniqueId = `faq-${categoryIndex}-${questionIndex}`;
+                            return (
+                                <details class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 group overflow-hidden">
+                                    <summary class="cursor-pointer p-6 flex items-center justify-between list-none select-none">
+                                        <div class="flex items-start gap-4 flex-1">
+                                            <span class="material-symbols-outlined text-primary-color text-2xl shrink-0 mt-1">
+                                                help_outline
+                                            </span>
+                                            <h3 class="text-lg md:text-xl font-semibold text-secondary-color group-hover:text-primary-color transition-colors">
+                                                {item.q}
+                                            </h3>
+                                        </div>
+                                        <span class="material-symbols-outlined text-primary-color text-3xl shrink-0 group-open:rotate-180 transition-transform duration-300">
+                                            expand_more
+                                        </span>
+                                    </summary>
+                                    <div class="px-6 pb-6 pl-16">
+                                        <p class="text-gray-700 leading-relaxed border-l-4 border-primary-color pl-4">
+                                            {item.a}
+                                        </p>
+                                    </div>
+                                </details>
+                            );
+                        })}
+                    </div>
+                </section>
+            ))}
+        </div>
+
+        <!-- Ainda tem dúvidas? -->
+        <div class="px-6 md:px-20 lg:px-40 py-16 bg-white">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="material-symbols-outlined text-6xl text-primary-color mb-4">
+                    contact_support
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary-color mb-4">
+                    Ainda tem dúvidas?
+                </h2>
+                <p class="text-gray-700 text-lg mb-8">
+                    Não encontrou a resposta que procurava? Nossa equipe está pronta para ajudar você!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <Button
+                        type={"primario"}
+                        className={"text-lg! sm:text-xl! font-normal! uppercase!"}
+                    >
+                        Enviar uma pergunta
+                    </Button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="px-6 md:px-20 lg:px-40 py-16 bg-linear-0 from-secondary-color to-primary-color">
+            <div class="text-center text-white max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Pronto para Economizar na Sua Obra?
+                </h2>
+                <p class="text-lg mb-8 text-gray-200">
+                    Fale com nossos especialistas e descubra como reduzir seus custos legalmente
+                </p>
+                <Button
+                    type={"transparente"}
+                    className={"text-lg! sm:text-xl! font-normal! uppercase! flex items-center justify-center mx-auto"}
+                >
+                    <img
+                        src="/icon-whatsapp.png"
+                        alt="WhatsApp Icon"
+                        class="w-5 h-5 mr-2 group-hover:invert"
+                    />
+                    FALE COM UM ESPECIALISTA
+                </Button>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+    
+    details[open] summary {
+        border-bottom: 1px solid #e5e7eb;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<script>
+    // Adiciona comportamento suave ao accordion
+    document.querySelectorAll('details').forEach((detail) => {
+        detail.addEventListener('toggle', () => {
+            if (detail.open) {
+                // Fecha outros details na mesma section se quiser comportamento exclusivo
+                // const section = detail.closest('section');
+                // section?.querySelectorAll('details[open]').forEach((other) => {
+                //     if (other !== detail) other.open = false;
+                // });
+            }
+        });
+    });
+</script>
