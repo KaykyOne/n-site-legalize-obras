@@ -3,21 +3,20 @@ import Button from './button'
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    let url = '';
-    if (typeof window !== "undefined") {
-        url = window.location.href.origin || '';
-    }
+    
+    // Base path para GitHub Pages
+    const basePath = '/n-site-legalize-obras';
 
     const Menu = () => {
         return (
             <nav className='gap-6 fade-in fade-in mr-6 text-secondary-color mt-[70px] bg-white font-semibold flex flex-col w-full items-center fixed pt-4 pb-4 lg:hidden z-20 shadow-2xl'>
-                <a href={`./`} className='hover:border-b'>Home</a>
-                <a href={`./sobre`} className='hover:border-b'>Sobre</a>
-                <a href={`./duvidas`} className='hover:border-b'>Dúvidas</a>
-                <a href={`./blog`} className='hover:border-b'>Blog</a>
+                <a href={`${basePath}/`} className='hover:border-b'>Home</a>
+                <a href={`${basePath}/sobre`} className='hover:border-b'>Sobre</a>
+                <a href={`${basePath}/duvidas`} className='hover:border-b'>Dúvidas</a>
+                <a href={`${basePath}/blog`} className='hover:border-b'>Blog</a>
                 <a className='w-full pl-5 pr-5'>
                     <Button type={'whatsapp'} className='!w-full'>
-                        <img src={`./icon-whatsapp.png`} alt="WhatsApp Icon" className='w-5 h-5 mr-2' />
+                        <img src={`${basePath}/icon-whatsapp.png`} alt="WhatsApp Icon" className='w-5 h-5 mr-2' />
                         Contato
                     </Button>
                 </a>
@@ -34,13 +33,13 @@ export default function Navbar() {
                 <div className='uppercase text-white font-bold'>legalize obras</div>
                 <div className='flex gap-3 items-center justify-center'>
                     <nav className='gap-6 mr-6 text-white font-semibold hidden lg:flex'>
-                        <a href="./" className='hover:border-b'>Home</a>
-                        <a href="./sobre" className='hover:border-b'>Sobre</a>
-                        <a href="./duvidas" className='hover:border-b'>Dúvidas</a>
-                        <a href="./blog" className='hover:border-b'>Blog</a>
+                        <a href={`${basePath}/`} className='hover:border-b'>Home</a>
+                        <a href={`${basePath}/sobre`} className='hover:border-b'>Sobre</a>
+                        <a href={`${basePath}/duvidas`} className='hover:border-b'>Dúvidas</a>
+                        <a href={`${basePath}/blog`} className='hover:border-b'>Blog</a>
                     </nav >
                     <Button type={'whatsapp'} className='hidden lg:flex'>
-                        <img src="/icon-whatsapp.png" alt="WhatsApp Icon" className='w-5 h-5 mr-2' />
+                        <img src={`${basePath}/icon-whatsapp.png`} alt="WhatsApp Icon" className='w-5 h-5 mr-2' />
                         Contato
                     </Button>
                     <button

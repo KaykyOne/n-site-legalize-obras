@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/button';
 
+const basePath = import.meta.env.BASE_URL;
+
 // Dados de exemplo para as postagens do blog
 const posts = [
     {
@@ -10,7 +12,7 @@ const posts = [
         excerpt: "Descubra as estratégias mais eficientes para economizar até 80% nos custos com contribuições previdenciárias em suas obras.",
         date: "2025-10-20",
         category: "Economia",
-        image: "/img-back-home.png",
+        image: `${basePath}img-back-home.png`,
         readTime: "5 min"
     },
     {
@@ -19,7 +21,7 @@ const posts = [
         excerpt: "Um guia completo sobre os primeiros passos para legalizar sua construção e evitar problemas com o fisco.",
         date: "2025-10-15",
         category: "Regularização",
-        image: "/img-back-home.png",
+        image: `${basePath}img-back-home.png`,
         readTime: "8 min"
     },
     {
@@ -28,7 +30,7 @@ const posts = [
         excerpt: "Entenda as mudanças na legislação e como sua empresa pode se adaptar para manter a conformidade.",
         date: "2025-10-10",
         category: "Legislação",
-        image: "/img-back-home.png",
+        image: `${basePath}img-back-home.png`,
         readTime: "6 min"
     },
     {
@@ -37,7 +39,7 @@ const posts = [
         excerpt: "Lista completa de documentos e certidões necessárias para regularizar sua construção.",
         date: "2025-10-05",
         category: "Documentação",
-        image: "/img-back-home.png",
+        image: `${basePath}img-back-home.png`,
         readTime: "7 min"
     },
     {
@@ -46,7 +48,7 @@ const posts = [
         excerpt: "Conheça histórias reais de empresas que reduziram drasticamente seus custos com INSS de obra.",
         date: "2025-09-28",
         category: "Cases",
-        image: "/img-back-home.png",
+        image: `${basePath}img-back-home.png`,
         readTime: "4 min"
     },
     {
@@ -55,7 +57,7 @@ const posts = [
         excerpt: "Aprenda com os erros mais frequentes cometidos por construtoras e como sua empresa pode se prevenir.",
         date: "2025-09-20",
         category: "Gestão",
-        image: "/img-back-home.png",
+        image: `${basePath}img-back-home.png`,
         readTime: "10 min"
     }
 ];
@@ -69,7 +71,7 @@ const categories = ["Todas", "Economia", "Regularização", "Legislação", "Doc
         <div class="relative">
             <div class="absolute w-full h-full">
                 <div class="absolute bg-black/70 w-full h-full backdrop-blur-sm"></div>
-                <img class="w-full h-full object-cover" src="./img-back-home.png" alt="Fundo"/>
+                <img class="w-full h-full object-cover" src={`${basePath}img-back-home.png`} alt="Fundo"/>
             </div>
 
             <div class="relative flex flex-col px-6 md:px-20 lg:px-40">
@@ -140,7 +142,7 @@ const categories = ["Todas", "Economia", "Regularização", "Legislação", "Doc
                             </p>
 
                             <a 
-                                href={`/blog/${post.id}`}
+                                href={`${basePath}blog/${post.id}`}
                                 class="inline-flex items-center gap-2 text-primary-color font-semibold text-sm uppercase hover:gap-3 transition-all duration-200"
                             >
                                 Ler mais
@@ -167,7 +169,7 @@ const categories = ["Todas", "Economia", "Regularização", "Legislação", "Doc
                         className={"text-lg! sm:text-xl! font-normal! uppercase! flex items-center justify-center"}
                     >
                         <img
-                            src="/icon-whatsapp.png"
+                            src={`${basePath}icon-whatsapp.png`}
                             alt="WhatsApp Icon"
                             class="w-5 h-5 mr-2 group-hover:invert"
                         />

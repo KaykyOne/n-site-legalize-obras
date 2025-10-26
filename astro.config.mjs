@@ -6,6 +6,8 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://kaykyone.github.io',
+  base: '/n-site-legalize-obras',
   vite: {
     plugins: [tailwindcss()],
   

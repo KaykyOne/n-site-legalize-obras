@@ -1,9 +1,7 @@
 import React from 'react'
 
-let url = '';
-if (typeof window !== "undefined") {
-    url = window.location.href.origin || '';
-}
+// Base path para GitHub Pages
+const basePath = '/n-site-legalize-obras';
 
 export default function Footer() {
     return (
@@ -31,10 +29,10 @@ export default function Footer() {
                     </div>
 
                     <div className='h-full w-full flex flex-col gap-2 text-sm items-center sm:items-start'>
-                        <a href={`${url}/`} className='hover:text-primary-color transition-colors'>Home</a>
-                        <a href={`${url}/sobre`} className='hover:text-primary-color transition-colors'>Sobre</a>
-                        <a href={`${url}/duvidas`} className='hover:text-primary-color transition-colors'>Dúvidas</a>
-                        <a href={`${url}/blog`} className='hover:text-primary-color transition-colors'>Blog</a>
+                        <a href={`${basePath}/`} className='hover:text-primary-color transition-colors'>Home</a>
+                        <a href={`${basePath}/sobre`} className='hover:text-primary-color transition-colors'>Sobre</a>
+                        <a href={`${basePath}/duvidas`} className='hover:text-primary-color transition-colors'>Dúvidas</a>
+                        <a href={`${basePath}/blog`} className='hover:text-primary-color transition-colors'>Blog</a>
                     </div>
                 </div>
             </div>
