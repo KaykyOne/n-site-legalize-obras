@@ -1,0 +1,577 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/button";
+
+const basePath = import.meta.env.BASE_URL;
+const { id } = Astro.params;
+
+// Dados completos dos posts (mesmos da listagem + conteúdo completo)
+const posts = [
+    {
+        id: 1,
+        title: "Como Reduzir Custos com INSS de Obra Legalmente",
+        excerpt:
+            "Descubra as estratégias mais eficientes para economizar até 80% nos custos com contribuições previdenciárias em suas obras.",
+        date: "2025-10-20",
+        category: "Economia",
+        image: `${basePath}/img-back-home.png`,
+        readTime: "5 min",
+        author: "Equipe Legalize Obras",
+        content: `
+            <h2>Introdução</h2>
+            <p>A contribuição previdenciária sobre obras é um dos custos mais significativos para empresas da construção civil. No entanto, muitas empresas pagam mais do que deveriam por falta de conhecimento sobre as possibilidades legais de redução.</p>
+            
+            <h2>Entendendo o INSS de Obra</h2>
+            <p>O INSS de obra, também conhecido como INSS sobre a receita bruta, é uma forma de tributação específica para o setor da construção civil. A alíquota padrão é de 11% sobre o valor da obra, mas existem formas legais de reduzir esse percentual.</p>
+            
+            <h2>Estratégias Legais de Redução</h2>
+            <h3>1. Desonerações Setoriais</h3>
+            <p>Algumas atividades dentro da construção civil podem se beneficiar de regimes especiais de desoneração. É fundamental verificar se sua empresa se enquadra em alguma dessas categorias.</p>
+            
+            <h3>2. Gestão Eficiente de Notas Fiscais</h3>
+            <p>A correta emissão e organização das notas fiscais pode gerar economia significativa. Certifique-se de que todos os documentos estão devidamente classificados.</p>
+            
+            <h3>3. Planejamento Tributário</h3>
+            <p>Um planejamento tributário adequado, realizado por especialistas, pode identificar oportunidades de economia que passam despercebidas.</p>
+            
+            <h2>Cases de Sucesso</h2>
+            <p>Empresas que implementaram essas estratégias conseguiram reduzir seus custos com INSS em até 80%, gerando economia de milhares de reais mensalmente.</p>
+            
+            <h2>Conclusão</h2>
+            <p>Reduzir custos com INSS de obra de forma legal não apenas é possível, como é recomendável para a saúde financeira da sua empresa. Conte com especialistas para garantir que todas as oportunidades sejam aproveitadas.</p>
+        `,
+    },
+    {
+        id: 2,
+        title: "Regularização de Obras: Por Onde Começar?",
+        excerpt:
+            "Um guia completo sobre os primeiros passos para legalizar sua construção e evitar problemas com o fisco.",
+        date: "2025-10-15",
+        category: "Regularização",
+        image: `${basePath}/img-back-home.png`,
+        readTime: "8 min",
+        author: "Equipe Legalize Obras",
+        content: `
+            <h2>Por que regularizar sua obra?</h2>
+            <p>A regularização de obras é essencial para evitar multas, problemas legais e garantir que sua construção esteja em conformidade com todas as normas vigentes.</p>
+            
+            <h2>Passo 1: Levantamento Documental</h2>
+            <p>O primeiro passo é reunir toda a documentação relacionada à obra: projetos, alvarás, contratos e notas fiscais. Essa organização inicial facilitará todo o processo.</p>
+            
+            <h2>Passo 2: Análise de Conformidade</h2>
+            <p>É necessário verificar se a obra está em conformidade com o projeto aprovado e com as normas técnicas vigentes. Eventuais divergências devem ser identificadas.</p>
+            
+            <h2>Passo 3: Documentação Complementar</h2>
+            <p>Caso necessário, será preciso elaborar documentação adicional, como laudos técnicos, projetos complementares ou retificações.</p>
+            
+            <h2>Passo 4: Submissão aos Órgãos Competentes</h2>
+            <p>Com toda a documentação em ordem, é hora de protocolar os pedidos junto aos órgãos municipais, estaduais e federais competentes.</p>
+            
+            <h2>Conclusão</h2>
+            <p>A regularização pode parecer complexa, mas com orientação adequada, o processo se torna muito mais simples e rápido.</p>
+        `,
+    },
+    {
+        id: 3,
+        title: "Novas Regras do INSS para Construção Civil em 2025",
+        excerpt:
+            "Entenda as mudanças na legislação e como sua empresa pode se adaptar para manter a conformidade.",
+        date: "2025-10-10",
+        category: "Legislação",
+        image: `${basePath}/img-back-home.png`,
+        readTime: "6 min",
+        author: "Equipe Legalize Obras",
+        content: `
+            <h2>O que mudou em 2025?</h2>
+            <p>A legislação previdenciária para o setor de construção civil passou por atualizações importantes em 2025, trazendo novas obrigações e também oportunidades para as empresas.</p>
+            
+            <h2>Principais Mudanças</h2>
+            <h3>1. Nova Base de Cálculo</h3>
+            <p>A forma de calcular a base para contribuição previdenciária foi atualizada, incluindo novos critérios de apuração.</p>
+            
+            <h3>2. Obrigações Acessórias</h3>
+            <p>Foram criadas novas declarações que devem ser apresentadas periodicamente ao fisco.</p>
+            
+            <h3>3. Prazos Diferenciados</h3>
+            <p>Alguns prazos para recolhimento e declaração foram alterados, exigindo atenção redobrada das empresas.</p>
+            
+            <h2>Como se Adaptar</h2>
+            <p>É fundamental que as empresas atualizem seus procedimentos internos e sistemas de gestão para garantir conformidade com as novas regras.</p>
+            
+            <h2>Orientação Especializada</h2>
+            <p>Contar com consultoria especializada é essencial para navegar por essas mudanças sem correr riscos de autuações.</p>
+        `,
+    },
+    {
+        id: 4,
+        title: "Documentação Necessária para Legalizar uma Obra",
+        excerpt:
+            "Lista completa de documentos e certidões necessárias para regularizar sua construção.",
+        date: "2025-10-05",
+        category: "Documentação",
+        image: `${basePath}/img-back-home.png`,
+        readTime: "7 min",
+        author: "Equipe Legalize Obras",
+        content: `
+            <h2>Documentos Essenciais</h2>
+            <p>Para legalizar uma obra, é necessário apresentar uma série de documentos. Confira a lista completa:</p>
+            
+            <h2>1. Documentos do Proprietário</h2>
+            <ul>
+                <li>RG e CPF (pessoa física) ou CNPJ (pessoa jurídica)</li>
+                <li>Comprovante de endereço</li>
+                <li>Certidão de casamento (se aplicável)</li>
+            </ul>
+            
+            <h2>2. Documentos do Imóvel</h2>
+            <ul>
+                <li>Matrícula atualizada do imóvel</li>
+                <li>Escritura de propriedade</li>
+                <li>IPTU quitado</li>
+                <li>Certidão de ônus do imóvel</li>
+            </ul>
+            
+            <h2>3. Documentos Técnicos</h2>
+            <ul>
+                <li>Projeto arquitetônico completo</li>
+                <li>Projeto estrutural</li>
+                <li>Projeto de instalações elétricas e hidráulicas</li>
+                <li>Memorial descritivo</li>
+                <li>ART ou RRT dos responsáveis técnicos</li>
+            </ul>
+            
+            <h2>4. Certidões e Licenças</h2>
+            <ul>
+                <li>Alvará de construção</li>
+                <li>Licença ambiental (se necessário)</li>
+                <li>Certidão de uso do solo</li>
+            </ul>
+            
+            <h2>5. Documentos Fiscais</h2>
+            <ul>
+                <li>Notas fiscais de materiais e serviços</li>
+                <li>Contratos de prestação de serviços</li>
+                <li>Guias de recolhimento do INSS</li>
+            </ul>
+            
+            <h2>Dicas Importantes</h2>
+            <p>Mantenha todos os documentos organizados e atualizados. A falta de um único documento pode atrasar todo o processo de legalização.</p>
+        `,
+    },
+    {
+        id: 5,
+        title: "Cases de Sucesso: Empresas que Economizaram Milhares",
+        excerpt:
+            "Conheça histórias reais de empresas que reduziram drasticamente seus custos com INSS de obra.",
+        date: "2025-09-28",
+        category: "Cases",
+        image: `${basePath}/img-back-home.png`,
+        readTime: "4 min",
+        author: "Equipe Legalize Obras",
+        content: `
+            <h2>Case 1: Construtora ABC</h2>
+            <p>A Construtora ABC conseguiu reduzir seus custos com INSS em 75% após uma revisão completa de seus processos tributários.</p>
+            
+            <h3>O Desafio</h3>
+            <p>A empresa estava pagando R$ 120.000 mensais em contribuições previdenciárias, impactando significativamente sua margem de lucro.</p>
+            
+            <h3>A Solução</h3>
+            <p>Através de um planejamento tributário adequado e regularização de processos, conseguimos identificar oportunidades de economia legal.</p>
+            
+            <h3>O Resultado</h3>
+            <p>Redução de custos para R$ 30.000 mensais, gerando uma economia anual de mais de R$ 1 milhão.</p>
+            
+            <h2>Case 2: Incorporadora XYZ</h2>
+            <p>Uma incorporadora de médio porte que regularizou 5 obras simultaneamente.</p>
+            
+            <h3>O Desafio</h3>
+            <p>Obras irregulares estavam impedindo a obtenção de financiamentos e gerando risco de multas.</p>
+            
+            <h3>A Solução</h3>
+            <p>Processo completo de regularização em apenas 6 meses, com suporte integral de nossa equipe.</p>
+            
+            <h3>O Resultado</h3>
+            <p>Todas as obras regularizadas, empresa habilitada para novos financiamentos e economia de R$ 500 mil em potenciais multas.</p>
+            
+            <h2>Conclusão</h2>
+            <p>Esses cases demonstram que investir em regularização e planejamento tributário gera retorno significativo para empresas do setor.</p>
+        `,
+    },
+    {
+        id: 6,
+        title: "Erros Comuns na Gestão de Obras e Como Evitá-los",
+        excerpt:
+            "Aprenda com os erros mais frequentes cometidos por construtoras e como sua empresa pode se prevenir.",
+        date: "2025-09-20",
+        category: "Gestão",
+        image: `${basePath}/img-back-home.png`,
+        readTime: "10 min",
+        author: "Equipe Legalize Obras",
+        content: `
+            <h2>Introdução</h2>
+            <p>A gestão de obras envolve diversos processos complexos, e pequenos erros podem gerar grandes problemas. Conheça os mais comuns:</p>
+            
+            <h2>Erro #1: Falta de Documentação</h2>
+            <h3>O Problema</h3>
+            <p>Muitas empresas não mantêm a documentação organizada e atualizada, o que dificulta processos de regularização e auditoria.</p>
+            
+            <h3>Como Evitar</h3>
+            <p>Implemente um sistema de gestão documental desde o início da obra. Digitalize todos os documentos e mantenha backups seguros.</p>
+            
+            <h2>Erro #2: Ignorar Prazos Legais</h2>
+            <h3>O Problema</h3>
+            <p>O descumprimento de prazos para licenças, alvarás e declarações pode gerar multas pesadas e até embargo da obra.</p>
+            
+            <h3>Como Evitar</h3>
+            <p>Crie um calendário de obrigações com alertas antecipados. Designe um responsável para monitorar os prazos.</p>
+            
+            <h2>Erro #3: Emissão Incorreta de Notas Fiscais</h2>
+            <h3>O Problema</h3>
+            <p>Notas fiscais emitidas incorretamente podem gerar problemas tributários e impedir abatimentos legais.</p>
+            
+            <h3>Como Evitar</h3>
+            <p>Treine sua equipe sobre a classificação correta de serviços e materiais. Revise periodicamente a emissão de notas.</p>
+            
+            <h2>Erro #4: Falta de Planejamento Tributário</h2>
+            <h3>O Problema</h3>
+            <p>Empresas que não planejam adequadamente seus tributos acabam pagando mais impostos do que deveriam.</p>
+            
+            <h3>Como Evitar</h3>
+            <p>Conte com consultoria especializada para identificar oportunidades de economia legal e otimização tributária.</p>
+            
+            <h2>Erro #5: Não Acompanhar Mudanças na Legislação</h2>
+            <h3>O Problema</h3>
+            <p>A legislação muda constantemente, e empresas desatualizadas correm risco de não conformidade.</p>
+            
+            <h3>Como Evitar</h3>
+            <p>Mantenha-se informado através de newsletters especializadas e mantenha contato regular com consultores jurídicos e contábeis.</p>
+            
+            <h2>Conclusão</h2>
+            <p>Evitar esses erros comuns pode significar a diferença entre o sucesso e o fracasso de um projeto. Invista em gestão profissional e consultoria especializada.</p>
+        `,
+    },
+];
+
+// Buscar o post pelo ID
+const post = posts.find((p) => p.id === parseInt(id || "0"));
+
+// Se o post não existir, redirecionar para a página de blog
+if (!post) {
+    return Astro.redirect(`${basePath}blog`);
+}
+
+// Posts relacionados (mesma categoria, excluindo o atual)
+const relatedPosts = posts
+    .filter((p) => p.category === post.category && p.id !== post.id)
+    .slice(0, 3);
+
+export async function getStaticPaths() {
+    return [
+        { params: { id: "1" } },
+        { params: { id: "2" } },
+        { params: { id: "3" } },
+        { params: { id: "4" } },
+        { params: { id: "5" } },
+        { params: { id: "6" } },
+
+    ];
+}
+---
+
+<Layout>
+    <div class="w-full min-h-screen bg-gray-50">
+        <!-- Header da Postagem -->
+        <div class="relative">
+            <div class="absolute w-full h-full">
+                <div
+                    class="absolute bg-black/60 w-full h-full backdrop-blur-sm"
+                >
+                </div>
+                <img
+                    class="w-full h-full object-cover"
+                    src={post.image}
+                    alt={post.title}
+                />
+            </div>
+
+            <div
+                class="relative px-6 md:px-20 lg:px-40 py-20 md:py-32 text-white"
+            >
+                <!-- Breadcrumb -->
+                <div class="mb-6 flex items-center gap-2 text-sm">
+                    <a
+                        href={`${basePath}`}
+                        class="hover:text-primary-color transition-colors"
+                        >Home</a
+                    >
+                    <span>/</span>
+                    <a
+                        href={`${basePath}blog`}
+                        class="hover:text-primary-color transition-colors"
+                        >Blog</a
+                    >
+                    <span>/</span>
+                    <span class="text-gray-300">{post.title}</span>
+                </div>
+
+                <!-- Categoria -->
+                <div class="mb-4">
+                    <span
+                        class="bg-primary-color text-white px-4 py-2 rounded-sm text-sm font-semibold uppercase"
+                    >
+                        {post.category}
+                    </span>
+                </div>
+
+                <!-- Título -->
+                <h1
+                    class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl"
+                >
+                    {post.title}
+                </h1>
+
+                <!-- Meta informações -->
+                <div class="flex flex-wrap items-center gap-6 text-gray-200">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined">person</span>
+                        <span>{post.author}</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined"
+                            >calendar_today</span
+                        >
+                        <span
+                            >{
+                                new Date(post.date).toLocaleDateString(
+                                    "pt-BR",
+                                    {
+                                        day: "numeric",
+                                        month: "long",
+                                        year: "numeric",
+                                    },
+                                )
+                            }</span
+                        >
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined">schedule</span>
+                        <span>{post.readTime} de leitura</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteúdo da Postagem -->
+        <div class="px-6 md:px-20 lg:px-40 py-12">
+            <div class="max-w-4xl mx-auto">
+                <!-- Excerpt -->
+                <div
+                    class="bg-primary-color/10 border-l-4 border-primary-color p-6 mb-8 rounded-r-lg"
+                >
+                    <p class="text-lg text-gray-700 italic">
+                        {post.excerpt}
+                    </p>
+                </div>
+
+                <!-- Conteúdo principal -->
+                <article class="prose prose-lg max-w-none">
+                    <div class="blog-content" set:html={post.content} />
+                </article>
+
+                <!-- Compartilhar -->
+                <div class="mt-12 pt-8 border-t border-gray-300">
+                    <h3 class="text-xl font-bold mb-4 text-secondary-color">
+                        Compartilhe este artigo
+                    </h3>
+                    <div class="flex gap-4">
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                        >
+                            <span class="material-symbols-outlined">share</span>
+                            Facebook
+                        </button>
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 bg-sky-500 text-white rounded hover:bg-sky-600 transition-colors"
+                        >
+                            <span class="material-symbols-outlined">share</span>
+                            Twitter
+                        </button>
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
+                        >
+                            <span class="material-symbols-outlined">share</span>
+                            WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Posts Relacionados -->
+        {
+            relatedPosts.length > 0 && (
+                <div class="px-6 md:px-20 lg:px-40 py-16 bg-white">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-secondary-color text-center">
+                        Artigos Relacionados
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        {relatedPosts.map((relatedPost) => (
+                            <article class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                                <div class="relative h-48 overflow-hidden">
+                                    <img
+                                        src={relatedPost.image}
+                                        alt={relatedPost.title}
+                                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                                    />
+                                    <div class="absolute top-4 left-4">
+                                        <span class="bg-primary-color text-white px-3 py-1 rounded-sm text-xs font-semibold uppercase">
+                                            {relatedPost.category}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="p-6">
+                                    <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                                        <span class="material-symbols-outlined text-sm">
+                                            schedule
+                                        </span>
+                                        {relatedPost.readTime}
+                                    </div>
+
+                                    <h3 class="text-lg font-bold text-secondary-color mb-3 leading-tight hover:text-primary-color transition-colors">
+                                        {relatedPost.title}
+                                    </h3>
+
+                                    <a
+                                        href={`${basePath}blog/${relatedPost.id}`}
+                                        class="inline-flex items-center gap-2 text-primary-color font-semibold text-sm uppercase hover:gap-3 transition-all duration-200"
+                                    >
+                                        Ler mais
+                                        <span class="material-symbols-outlined text-lg">
+                                            arrow_forward
+                                        </span>
+                                    </a>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            )
+        }
+
+        <!-- CTA Section -->
+        <div
+            class="px-6 md:px-20 lg:px-40 py-16 bg-linear-to-r from-secondary-color to-primary-color"
+        >
+            <div class="text-center text-white max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Gostou do conteúdo? Fale com nossos especialistas!
+                </h2>
+                <p class="text-lg mb-8 text-gray-200">
+                    Nossa equipe está pronta para ajudar sua empresa a
+                    economizar e regularizar suas obras
+                </p>
+                <div
+                    class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                >
+                    <Button
+                        type={"transparente"}
+                        className={"text-lg! sm:text-xl! font-normal! uppercase! flex items-center justify-center"}
+                    >
+                        <img
+                            src={`${basePath}/icon-whatsapp.png`}
+                            alt="WhatsApp Icon"
+                            class="w-5 h-5 mr-2 group-hover:invert"
+                        />
+                        FALE COM UM ESPECIALISTA
+                    </Button>
+                    <a
+                        href={`${basePath}/blog`}
+                        class="px-8 py-3 bg-white text-primary-color rounded hover:bg-gray-100 transition-colors font-semibold uppercase"
+                    >
+                        Voltar ao Blog
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .blog-content {
+        color: #374151;
+        line-height: 1.8;
+    }
+
+    .blog-content h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--secondary-color);
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+    }
+
+    .blog-content h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--secondary-color);
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .blog-content p {
+        margin-bottom: 1.25rem;
+        font-size: 1.125rem;
+    }
+
+    .blog-content ul,
+    .blog-content ol {
+        margin-left: 2rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .blog-content li {
+        margin-bottom: 0.5rem;
+        font-size: 1.125rem;
+    }
+
+    .blog-content ul li {
+        list-style-type: disc;
+    }
+
+    .blog-content ol li {
+        list-style-type: decimal;
+    }
+
+    .blog-content strong {
+        font-weight: 600;
+        color: var(--secondary-color);
+    }
+
+    .blog-content a {
+        color: var(--primary-color);
+        text-decoration: underline;
+    }
+
+    .blog-content a:hover {
+        color: var(--secondary-color);
+    }
+
+    /* Responsividade para prose */
+    @media (max-width: 768px) {
+        .blog-content h2 {
+            font-size: 1.75rem;
+        }
+
+        .blog-content h3 {
+            font-size: 1.25rem;
+        }
+
+        .blog-content p,
+        .blog-content li {
+            font-size: 1rem;
+        }
+    }
+</style>
