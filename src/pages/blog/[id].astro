@@ -1,6 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Button from "../../components/button";
+import {
+    WhatsappShareButton,
+    WhatsappIcon,
+    FacebookShareButton,
+    FacebookIcon,
+} from "react-share";
 
 const basePath = import.meta.env.BASE_URL;
 const { id } = Astro.params;
@@ -273,7 +279,6 @@ export async function getStaticPaths() {
         { params: { id: "4" } },
         { params: { id: "5" } },
         { params: { id: "6" } },
-
     ];
 }
 ---
@@ -383,25 +388,14 @@ export async function getStaticPaths() {
                     <h3 class="text-xl font-bold mb-4 text-secondary-color">
                         Compartilhe este artigo
                     </h3>
-                    <div class="flex gap-4">
-                        <button
-                            class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-                        >
-                            <span class="material-symbols-outlined">share</span>
-                            Facebook
-                        </button>
-                        <button
-                            class="flex items-center gap-2 px-4 py-2 bg-sky-500 text-white rounded hover:bg-sky-600 transition-colors"
-                        >
-                            <span class="material-symbols-outlined">share</span>
-                            Twitter
-                        </button>
-                        <button
-                            class="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
-                        >
-                            <span class="material-symbols-outlined">share</span>
-                            WhatsApp
-                        </button>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <WhatsappShareButton url={import.meta.url} title={"blog"}>
+                            <WhatsappIcon size={32} round />
+                        </WhatsappShareButton>
+
+                        <FacebookShareButton url={import.meta.url} title={"blog"}>
+                            <FacebookIcon size={32} round />
+                        </FacebookShareButton>
                     </div>
                 </div>
             </div>
@@ -486,12 +480,9 @@ export async function getStaticPaths() {
                         />
                         FALE COM UM ESPECIALISTA
                     </Button>
-                    <a
-                        href={`${basePath}/blog`}
-                        class="px-8 py-3 bg-white text-primary-color rounded hover:bg-gray-100 transition-colors font-semibold uppercase"
-                    >
+                    <Button type={"whatsapp"} href={`${basePath}/blog`}>
                         Voltar ao Blog
-                    </a>
+                    </Button>
                 </div>
             </div>
         </div>

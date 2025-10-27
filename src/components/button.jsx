@@ -10,6 +10,6 @@ const css = {
 }
 
   return (
-    <button className={`${css[type] || css.primario} ${className}`} {...props}>{children}</button>
+    <a className={`${css[type] || css.primario} ${className}`} {...props}>{children}</a>
   )
 }
