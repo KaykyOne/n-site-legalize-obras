@@ -3,64 +3,18 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/button';
 
 const basePath = import.meta.env.BASE_URL;
+const API_URL = 'https://vps57731.publiccloud.com.br/blog';
 
 // Dados de exemplo para as postagens do blog
-const posts = [
-    {
-        id: 1,
-        title: "Como Reduzir Custos com INSS de Obra Legalmente",
-        excerpt: "Descubra as estratégias mais eficientes para economizar até 80% nos custos com contribuições previdenciárias em suas obras.",
-        date: "2025-10-20",
-        category: "Economia",
-        image: `${basePath}/img-back-home.png`,
-        readTime: "5 min"
-    },
-    {
-        id: 2,
-        title: "Regularização de Obras: Por Onde Começar?",
-        excerpt: "Um guia completo sobre os primeiros passos para legalizar sua construção e evitar problemas com o fisco.",
-        date: "2025-10-15",
-        category: "Regularização",
-        image: `${basePath}/img-back-home.png`,
-        readTime: "8 min"
-    },
-    {
-        id: 3,
-        title: "Novas Regras do INSS para Construção Civil em 2025",
-        excerpt: "Entenda as mudanças na legislação e como sua empresa pode se adaptar para manter a conformidade.",
-        date: "2025-10-10",
-        category: "Legislação",
-        image: `${basePath}/img-back-home.png`,
-        readTime: "6 min"
-    },
-    {
-        id: 4,
-        title: "Documentação Necessária para Legalizar uma Obra",
-        excerpt: "Lista completa de documentos e certidões necessárias para regularizar sua construção.",
-        date: "2025-10-05",
-        category: "Documentação",
-        image: `${basePath}/img-back-home.png`,
-        readTime: "7 min"
-    },
-    {
-        id: 5,
-        title: "Cases de Sucesso: Empresas que Economizaram Milhares",
-        excerpt: "Conheça histórias reais de empresas que reduziram drasticamente seus custos com INSS de obra.",
-        date: "2025-09-28",
-        category: "Cases",
-        image: `${basePath}/img-back-home.png`,
-        readTime: "4 min"
-    },
-    {
-        id: 6,
-        title: "Erros Comuns na Gestão de Obras e Como Evitá-los",
-        excerpt: "Aprenda com os erros mais frequentes cometidos por construtoras e como sua empresa pode se prevenir.",
-        date: "2025-09-20",
-        category: "Gestão",
-        image: `${basePath}/img-back-home.png`,
-        readTime: "10 min"
-    }
-];
+let posts : any = []
+
+try {
+  const res = await fetch(`${API_URL}/api/posts?populate=*`);
+  const data = await res.json();
+  posts = data.data || [];
+} catch (error) {
+  console.error("Erro ao buscar posts:", error);
+}
 
 const categories = ["Todas", "Economia", "Regularização", "Legislação", "Documentação", "Cases", "Gestão"];
 ---
@@ -104,13 +58,13 @@ const categories = ["Todas", "Economia", "Regularização", "Legislação", "Doc
         <!-- Grid de Postagens -->
         <div class="px-6 md:px-20 lg:px-40 py-12 fade-in-contrario">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {posts.map((post) => (
+                {posts.map((post: any) => (
                     <a href={`${basePath}/blog/${post.id}`} class="group">
                         <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer border border-gray-200">
                             <!-- Imagem do Post -->
                             <div class="relative h-48 overflow-hidden">
                             <img 
-                                src={post.image} 
+                                src={`${API_URL}${post.coverImage.url}`} 
                                 alt={post.title}
                                 class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                             />
@@ -126,7 +80,7 @@ const categories = ["Todas", "Economia", "Regularização", "Legislação", "Doc
                             <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
                                 <span class="flex items-center gap-1">
                                     <span class="material-symbols-outlined text-sm">calendar_today</span>
-                                    {new Date(post.date).toLocaleDateString('pt-BR')}
+                                    {new Date(post.publicadoEm).toLocaleDateString('pt-BR')}
                                 </span>
                                 <span class="flex items-center gap-1">
                                     <span class="material-symbols-outlined text-sm">schedule</span>
@@ -139,7 +93,7 @@ const categories = ["Todas", "Economia", "Regularização", "Legislação", "Doc
                             </h3>
 
                             <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                                {post.excerpt}
+                                {post.content}
                             </p>
 
                             <div class="inline-flex items-center gap-2 text-primary-color font-semibold text-sm uppercase group-hover:gap-3 transition-all duration-200">
@@ -168,7 +122,7 @@ const categories = ["Todas", "Economia", "Regularização", "Legislação", "Doc
                         className={"text-lg! sm:text-xl! font-normal! uppercase! flex items-center justify-center"}
                     >
                         <img
-                            src={`${basePath}icon-whatsapp.png`}
+                            src={`${basePath}/icon-whatsapp.png`}
                             alt="WhatsApp Icon"
                             class="w-5 h-5 mr-2 group-hover:invert"
                         />

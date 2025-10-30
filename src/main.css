@@ -39,3 +39,9 @@
     transform: translateY(0);
   }
 }
+
+.gradient-text {
+  background: linear-gradient(to bottom, var(--color-primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -168,9 +168,26 @@ const basePath = import.meta.env.BASE_URL;
                 </div>
             </div>
         </div>
+
+        <div
+            class="relative flex flex-wrap gap-20 md:px-20 lg:px-40 pb-10 pt-10 fade-in-contrario"
+        >
+            <div
+                class="flex flex-col bg-linear-0 from-primary-color to-secondary-color h-[500px] w-[400px] rounded-md overflow-visible relative shadow-2xl"
+            >
+                <img
+                    src="./img-obras-capacete.jpg"
+                    class="absolute top-5 left-5 h-[500px] w-[400px] object-cover rounded-md shadow-lg z-10"
+                />
+            </div>
+            <div class="flex flex-col col-span-3 gap-2">
+                <h1 class="text-9xl font-bold gradient-text">Atuação</h1>
+                <h2 class="text-xl font-medium">Um pocuo da nossa atuação!</h2>
+            </div>
+        </div>
     </div>
     <script>
-        const animarNumero = (id:string, temp:number) => {
+        const animarNumero = (id: string, temp: number) => {
             const element = document.getElementById(id);
             if (!element) return;
 
