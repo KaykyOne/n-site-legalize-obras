@@ -30,7 +30,10 @@ export default function Navbar() {
 
             </div> */}
             <nav className='w-full h-[70px] bg-linear-90 from-primary-color to-secondary-color flex justify-between items-center lg:pl-40 lg:pr-40 pl-6 pr-6 z-20 fixed'>
-                <div className='uppercase text-white font-bold'>legalize obras</div>
+                <a href={`${basePath}/`} className='flex items-center gap-3'>
+                    <img src={`${basePath}/img-logo.png`} alt="Legalize Obras Logo" className='h-12 rounded-full' />
+                    <span className='uppercase text-white font-bold'>legalize obras</span>
+                </a>
                 <div className='flex gap-3 items-center justify-center'>
                     <nav className='gap-6 mr-6 text-white font-semibold hidden lg:flex'>
                         <a href={`${basePath}/`} className='hover:border-b'>Home</a>
