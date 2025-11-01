@@ -1,88 +1,100 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const basePath = import.meta.env.BASE_URL;
 ---
 
 <Layout>
-    <div class="w-full min-h-screen flex flex-col items-center justify-center fade-in-contrario">
-        <div class="flex flex-col w-full items-center justify-center gap-6 max-w-[600px]">
+    <article class="w-full min-h-screen flex flex-col items-center justify-center fade-in-contrario py-12 px-4">
+        <div class="flex flex-col w-full items-center justify-center gap-6 max-w-[800px]">
             <div
-                class="relative flex flex-col rounded-full w-[100px] h-[100px] bg-neutral-400"
+                class="relative flex flex-col rounded-full w-[120px] h-[120px] overflow-hidden shadow-xl border-4 border-primary-color"
             >
+                <img
+                    src={`${basePath}/img-logo.png`}
+                    alt="Logo Legalize Obras - Consultoria em INSS de Obras"
+                    class="w-full h-full object-cover"
+                    width="120"
+                    height="120"
+                />
             </div>
-            <div class="flex flex-col gap-1 text-center">
-                <h1 class="text-5xl uppercase font-bold">Legalize Obras</h1>
-                <h4 class="text-neutral-500">
+            <header class="flex flex-col gap-1 text-center">
+                <h1 class="text-4xl sm:text-5xl uppercase font-bold gradient-text">Legalize Obras</h1>
+                <h2 class="text-neutral-500 text-lg sm:text-xl">
                     Sempre trabalhando para <strong>VOCÊ</strong>!
-                </h4>
-                <p class="text-justify mt-10 text-neutral-400">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Sit dolor eum omnis id reiciendis harum quis minus, deleniti
-                    maxime voluptatum atque quod doloremque asperiores? Cum
-                    laborum quod aliquam corrupti! Suscipit. Lorem, ipsum dolor
-                    sit amet consectetur adipisicing elit. Perspiciatis delectus
-                    natus eius voluptas eos voluptate ipsa molestiae quas illum,
-                    iure sequi? Repudiandae inventore eos omnis dicta harum. At,
-                    quas quam!
+                </h2>
+            </header>
+            
+            <section class="flex flex-col gap-4 mt-6">
+                <p class="text-justify font-normal text-neutral-700 leading-relaxed">
+                    A <strong>Legalize Obras</strong> é uma consultoria especializada em planejamento tributário para construção civil, com foco na redução legal de contribuições previdenciárias (INSS) de obras. Fundada por profissionais com mais de 10 anos de experiência no setor, nossa missão é ajudar construtoras, incorporadoras e pessoas físicas a economizarem de forma inteligente e dentro da lei.
                 </p>
-            </div>
-            <div class="flex gap-3 flex-col lg:flex-row text-primary-color">
-                <div
-                    class="bg-white shadow-lg p-4 flex flex-col gap-1 rounded-md border border-neutral-200 hover:opacity-80 transition-all duration-300 items-center justify-center pb-10 pt-10"
-                >
-                    <div
-                        class="w-[100px] h-[100px] bg-linear-90 from-primary-color to-secondary-color rounded-full flex items-center justify-center"
-                    >
-                        <span
-                            class="material-symbols-outlined !text-5xl text-white"
-                        >
-                            security
-                        </span>
-                    </div>
-                    <h1 class="text-xl font-bold uppercase">Honestidade</h1>
-                    <p class="text-neutral-500 text-sm text-center">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Illo veritatis quam qui. Qu
-                    </p>
-                </div>
+                <p class="text-justify font-normal text-neutral-700 leading-relaxed">
+                    Sabemos que os custos com INSS de obra podem representar até 20% do valor total da construção. Por isso, desenvolvemos uma metodologia exclusiva que analisa cada projeto individualmente, identificando todas as oportunidades legais de redução tributária, permitindo economia de até 80% nessas contribuições.
+                </p>
+                <p class="text-justify font-normal text-neutral-700 leading-relaxed">
+                    Nossa equipe multidisciplinar combina conhecimento jurídico, contábil e da construção civil para oferecer soluções personalizadas que garantem segurança jurídica total e economia real para nossos clientes.
+                </p>
+            </section>
 
-                <div
-                    class="bg-white shadow-lg p-4 flex flex-col gap-1 rounded-md border border-neutral-200 hover:opacity-80 transition-all duration-300 items-center justify-center pb-10 pt-10"
+            <section class="flex gap-3 flex-col lg:flex-row text-primary-color w-full mt-8">
+                <article
+                    class="bg-white shadow-lg p-6 flex flex-col gap-3 rounded-md border border-neutral-200 hover:opacity-80 transition-all duration-300 items-center justify-center"
                 >
                     <div
                         class="w-[100px] h-[100px] bg-linear-90 from-primary-color to-secondary-color rounded-full flex items-center justify-center"
                     >
                         <span
                             class="material-symbols-outlined !text-5xl text-white"
+                            aria-hidden="true"
                         >
-                            security
+                            gavel
                         </span>
                     </div>
-                    <h1 class="text-xl font-bold uppercase">Honestidade</h1>
+                    <h3 class="text-xl font-bold uppercase">Legalidade</h3>
                     <p class="text-neutral-500 text-sm text-center">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Illo veritatis quam qui. Qu
+                        Todas as nossas estratégias são 100% legais e baseadas na legislação tributária brasileira vigente.
                     </p>
-                </div>
+                </article>
 
-                <div
-                    class="bg-white shadow-lg p-4 flex flex-col gap-1 rounded-md border border-neutral-200 hover:opacity-80 transition-all duration-300 items-center justify-center pb-10 pt-10"
+                <article
+                    class="bg-white shadow-lg p-6 flex flex-col gap-3 rounded-md border border-neutral-200 hover:opacity-80 transition-all duration-300 items-center justify-center"
                 >
                     <div
                         class="w-[100px] h-[100px] bg-linear-90 from-primary-color to-secondary-color rounded-full flex items-center justify-center"
                     >
                         <span
                             class="material-symbols-outlined !text-5xl text-white"
+                            aria-hidden="true"
                         >
-                            security
+                            savings
                         </span>
                     </div>
-                    <h1 class="text-xl font-bold uppercase">Honestidade</h1>
+                    <h3 class="text-xl font-bold uppercase">Economia</h3>
                     <p class="text-neutral-500 text-sm text-center">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Illo veritatis quam qui. Qu
+                        Redução comprovada de até 80% nos custos com INSS de obra, aumentando a rentabilidade do seu projeto.
                     </p>
-                </div>
-            </div>
+                </article>
+
+                <article
+                    class="bg-white shadow-lg p-6 flex flex-col gap-3 rounded-md border border-neutral-200 hover:opacity-80 transition-all duration-300 items-center justify-center"
+                >
+                    <div
+                        class="w-[100px] h-[100px] bg-linear-90 from-primary-color to-secondary-color rounded-full flex items-center justify-center"
+                    >
+                        <span
+                            class="material-symbols-outlined !text-5xl text-white"
+                            aria-hidden="true"
+                        >
+                            psychology
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase">Expertise</h3>
+                    <p class="text-neutral-500 text-sm text-center">
+                        Equipe especializada com anos de experiência em tributação de obras e construção civil.
+                    </p>
+                </article>
+            </section>
         </div>
-    </div>
+    </article>
 </Layout>
