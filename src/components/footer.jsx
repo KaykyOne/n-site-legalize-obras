@@ -12,7 +12,7 @@ export default function Footer() {
                         <div className='uppercase text-white font-bold text-2xl md:text-3xl text-center lg:text-left'>legalize obras</div>
                     </div>
                     <p className='text-sm text-neutral-400 text-justify leading-relaxed'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis molestiae dolorem alias libero officia non veritatis reiciendis illum sit, quo dolor, facere veniam explicabo eaque? Ipsum voluptatem beatae optio magni Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, neque officiis maxime optio omnis architecto minima, exercitationem corrupti a nam alias inventore rem eveniet veniam, quae natus? Dolorum, libero qui.
+                        A <strong>Legalize Obras</strong> é a sua consultoria especializada em planejamento tributário e regularização do INSS de obras. Atuamos nacionalmente com foco em <strong>segurança jurídica e redução legal de até 80%</strong> nos custos do seu projeto. Garantimos a emissão da sua CND/DRCI de forma rápida e transparente. 
                     </p>
                 </div>
 
@@ -24,7 +24,7 @@ export default function Footer() {
                         </div>
                         <div className='flex flex-col'>
                             <h3 className='text-neutral-300 text-sm'>E-mail:</h3>
-                            <h1 className='text-xl md:text-2xl font-bold break-words'>asdasdasd@asdasd.com</h1>
+                            <h1 className='text-xl md:text-2xl font-bold break-words'>legalizeobrass@gmail.com</h1>
                         </div>
                     </div>
 
