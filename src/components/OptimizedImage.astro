@@ -1,0 +1,52 @@
+---
+/**
+ * Componente de imagem otimizada com suporte a WebP e fallback
+ * Melhora performance e SEO do site
+ */
+
+interface Props {
+    src: string;
+    alt: string;
+    className?: string;
+    loading?: 'lazy' | 'eager';
+    width?: number;
+    height?: number;
+    priority?: boolean;
+}
+
+const { 
+    src, 
+    alt, 
+    className = '', 
+    loading = 'lazy', 
+    width, 
+    height,
+    priority = false 
+} = Astro.props;
+
+// Remove extensão e adiciona .webp
+const getWebPSrc = (originalSrc: string) => {
+    const lastDot = originalSrc.lastIndexOf('.');
+    if (lastDot === -1) return originalSrc;
+    return originalSrc.substring(0, lastDot) + '.webp';
+};
+
+const webpSrc = getWebPSrc(src);
+const finalLoading = priority ? 'eager' : loading;
+---
+
+<picture>
+    <!-- Formato WebP para navegadores modernos -->
+    <source srcset={webpSrc} type="image/webp" />
+    
+    <!-- Fallback para navegadores antigos -->
+    <img 
+        src={src}
+        alt={alt}
+        class={className}
+        loading={finalLoading}
+        width={width}
+        height={height}
+        decoding={priority ? 'sync' : 'async'}
+    />
+</picture>

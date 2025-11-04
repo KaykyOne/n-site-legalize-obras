@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/button";
 import Contact from "../components/contact";
+import ContactButton from "../components/ContactButton";
 
 const basePath = import.meta.env.BASE_URL;
 ---
@@ -35,17 +36,21 @@ const basePath = import.meta.env.BASE_URL;
                         Pare de Pagar
                     </h4>
                     <h1
-                        class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl uppercase font-bold leading-tight mb-2"
+                        class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl uppercase font-extrabold leading-tight md:leading-none mb-2 whitespace-normal md:whitespace-nowrap max-w-full"
                     >
-                        INSS de Obra
+                        mais do que precisa!
                     </h1>
                     <h4
-                        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4"
+                        class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 max-w-5xl w-full md:mx-0 leading-normal"
                     >
-                        Reduza Legalmente em Até 80%
+                        Com a Legalize Obras, você reduz o INSS da sua obra em
+                        até 80% de forma 100% legal e segura.
                     </h4>
-                    <p class="text-neutral-300 mt-4 sm:mt-6 text-sm sm:text-base md:text-lg">
-                        Especialistas em planejamento tributário e contribuições previdenciárias de obras
+                    <p
+                        class="text-neutral-300 mt-4 sm:mt-6 text-sm sm:text-base md:text-lg"
+                    >
+                        Economize sem dor de cabeça — nós cuidamos de toda a
+                        parte tributária pra você.
                     </p>
 
                     <div
@@ -57,9 +62,10 @@ const basePath = import.meta.env.BASE_URL;
                         >
                             Saiba Mais
                         </Button>
-                        <Button
-                            type={"transparente"}
-                            className={"!text-lg sm:!text-xl !font-normal !uppercase flex items-center justify-center w-full sm:w-auto"}
+                        <ContactButton 
+                            client:load
+                            type="transparente"
+                            className="!text-lg sm:!text-xl !font-normal !uppercase flex items-center justify-center w-full sm:w-auto"
                         >
                             <img
                                 src={`${basePath}/icon-whatsapp.png`}
@@ -67,14 +73,17 @@ const basePath = import.meta.env.BASE_URL;
                                 class="w-5 h-5 mr-2 group-hover:invert"
                             />
                             FALE COM UM ESPECIALISTA
-                        </Button>
+                        </ContactButton>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
 
         <!-- Seção com divisões: azul à esquerda, e do lado direito preto em cima e brancos embaixo -->
-        <section class="px-4 sm:px-6 md:px-20 lg:px-40 -top-10 relative fade-in-contrario" aria-label="Benefícios e estatísticas">
+        <section
+            class="px-4 sm:px-6 md:px-20 lg:px-40 -top-10 relative fade-in-contrario"
+            aria-label="Benefícios e estatísticas"
+        >
             <div
                 class="min-h-[350px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex flex-col lg:flex-row overflow-hidden border border-black rounded-lg"
             >
@@ -84,19 +93,24 @@ const basePath = import.meta.env.BASE_URL;
                 >
                     <div class="max-w-lg">
                         <p class="text-gray-300 text-sm md:text-base mb-2">
-                            Realize suas construções e reformas sem que
+                            Construa e reforme sem que
                         </p>
                         <h2
                             class="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
                         >
-                            Os tributos custem tanto quanto a própria obra!
+                            Os tributos custem o preço da sua obra!
                         </h2>
                         <div class="flex gap-4 items-start mb-6">
-                            <div class="w-1 bg-white h-24 shrink-0"></div>
                             <p
-                                class="text-white text-sm md:text-base leading-relaxed"
+                                class="text-white text-sm md:text-base leading-relaxed text-justify border-l-4 pl-5"
                             >
-                                Com nossa consultoria especializada, você economiza de forma legal nas contribuições previdenciárias. Nosso planejamento tributário identifica oportunidades de redução do INSS de obra, mantendo sua empresa em total conformidade com a legislação vigente.
+                                Com a consultoria especializada da Legalize
+                                Obras, você economiza de forma totalmente legal
+                                nas contribuições previdenciárias. Nosso
+                                planejamento tributário estratégico identifica
+                                oportunidades de redução real do INSS de obra,
+                                mantendo sua construção em conformidade com a
+                                legislação vigente — sem riscos e sem surpresas.
                             </p>
                         </div>
                         <Button
@@ -131,44 +145,51 @@ const basePath = import.meta.env.BASE_URL;
                             </p>
                             <p class="text-white text-xl md:text-2xl mt-2">
                                 de <span class="font-bold">RETORNO</span> em economia
+                                comprovada
                             </p>
                         </div>
                     </div>
 
                     <!-- Seções Brancas lado a lado -->
-                    <div class="bg-white flex-1 flex flex-wrap">
-                        <div
-                            class="flex-1 flex items-center justify-center border-r border-gray-200 p-6"
-                        >
+                    <!-- Seções Brancas lado a lado (com linha preta divisória) -->
+                    <div
+                        class="bg-white flex-1 flex flex-row divide-x divide-black"
+                    >
+                        <div class="w-1/2 flex items-center justify-center p-6">
                             <div class="text-center">
                                 <p
-                                    class="text-black text-4xl md:text-6xl font-bold mb-3"
+                                    class="text-black text-3xl md:text-5xl font-bold mb-2"
                                     id="50"
                                     data-target="50"
                                 >
                                     50%
                                 </p>
                                 <p
-                                    class="text-primary-color text-lg md:text-xl whitespace-nowrap"
+                                    class="text-primary-color text-base md:text-lg whitespace-nowrap"
                                 >
-                                    <span class="font-bold">MENOS TEMPO</span> de análise
+                                    <span class="font-bold">MENOS TEMPO</span> de
+                                    análise
                                 </p>
                             </div>
                         </div>
-                        <div class="flex-1 flex items-center justify-center p-6">
+                        <div class="w-1/2 flex items-center justify-center p-6">
                             <div class="text-center">
                                 <p
-                                    class="text-black text-4xl md:text-6xl font-bold mb-3"
+                                    class="text-black text-3xl md:text-5xl font-bold mb-2"
                                     id="40"
                                     data-target="40"
                                 >
                                     +40%
                                 </p>
-                                <p class="text-primary-color text-xl md:text-2xl">
+                                <p
+                                    class="text-primary-color text-base md:text-lg"
+                                >
                                     de <span class="font-bold">AGILIDADE</span>
                                 </p>
-                                <p class="text-primary-color text-xl md:text-2xl">
-                                    nos processos
+                                <p
+                                    class="text-primary-color text-base md:text-lg"
+                                >
+                                    em todo o processo
                                 </p>
                             </div>
                         </div>
@@ -195,46 +216,116 @@ const basePath = import.meta.env.BASE_URL;
             </div>
             <article class="flex flex-col gap-3 sm:gap-4 w-full">
                 <div class="flex flex-col gap-1">
-                    <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold gradient-text leading-tight">Atuação</h2>
-                    <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold gradient-text">Um pouco do nosso trabalho!</h3>
+                    <h2
+                        class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold gradient-text leading-tight"
+                    >
+                        Atuação
+                    </h2>
+                    <h3
+                        class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold gradient-text"
+                    >
+                        Um pouco do nosso trabalho!
+                    </h3>
                 </div>
-                <div class="w-[60%] h-1 bg-linear-to-r from-primary-color to-secondary-color rounded-full"></div>
-                <p class="text-sm sm:text-base lg:text-lg font-normal text-neutral-700 mt-2 text-justify">
-                    Nossa equipe atua com foco total em planejamento tributário para construção civil, oferecendo soluções personalizadas que permitem economia significativa nas contribuições previdenciárias de obras. Através de análise detalhada da sua situação, identificamos as melhores estratégias legais para reduzir o INSS sobre mão de obra, sempre dentro da legislação vigente. Com mais de 10 anos de experiência no mercado, já ajudamos centenas de construtoras e empresas do setor a otimizarem seus custos tributários sem comprometer a segurança jurídica.
+                <div
+                    class="w-[60%] h-1 bg-linear-to-r from-primary-color to-secondary-color rounded-full"
+                >
+                </div>
+                <p
+                    class="text-sm sm:text-base lg:text-lg font-normal text-neutral-700 mt-2 text-justify"
+                >
+                    Na Legalize Obras, atuamos com foco total em planejamento
+                    tributário para a construção civil, oferecendo soluções
+                    personalizadas que garantem economia real e segurança
+                    jurídica. Através de uma análise detalhada da sua obra,
+                    identificamos as melhores estratégias legais para reduzir o
+                    INSS sobre a mão de obra, sempre dentro da legislação
+                    vigente. Com mais de 12 anos de experiência no mercado, já
+                    ajudamos centenas de construtoras, engenheiros e
+                    proprietários de obras a otimizarem custos sem comprometer a
+                    regularização e a conformidade com a Receita Federal.
                 </p>
+
+                <!-- Frase final em destaque -->
+                <div class="mt-4">
+                    <p
+                        class="italic text-neutral-700 bg-neutral-100/40 rounded-md px-4 py-3 border-l-4 border-primary-color/30 max-w-4xl"
+                    >
+                        “Nosso compromisso é transformar a burocracia em
+                        economia e tranquilidade pra quem constrói.”
+                    </p>
+                </div>
             </article>
         </section>
 
         <!-- Seção Conheça Nossos Serviços -->
-        <section class="w-full py-12 sm:py-16 md:py-20 fade-in-contrario" aria-label="Nossos serviços">
-            <div class="flex flex-col items-center text-center gap-3 sm:gap-4 mb-12 sm:mb-14 md:mb-16 px-4 sm:px-6 md:px-20 lg:px-40">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold gradient-text leading-[1.2] pb-2">Conheça Nossos Serviços</h2>
-                <div class="w-64 sm:w-80 md:w-96 h-1 bg-linear-to-r from-primary-color to-secondary-color rounded-full"></div>
-                <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold gradient-text">O que podemos fazer com você?</h3>
+        <section
+            class="w-full py-12 sm:py-16 md:py-20 fade-in-contrario"
+            aria-label="Nossos serviços"
+        >
+            <div
+                class="flex flex-col items-center text-center gap-3 sm:gap-4 mb-12 sm:mb-14 md:mb-16 px-4 sm:px-6 md:px-20 lg:px-40"
+            >
+                <h2
+                    class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold gradient-text leading-[1.2] pb-2"
+                >
+                    Conheça Nossos Serviços
+                </h2>
+                <div
+                    class="w-64 sm:w-80 md:w-96 h-1 bg-linear-to-r from-primary-color to-secondary-color rounded-full"
+                >
+                </div>
+                <h3
+                    class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold gradient-text"
+                >
+                    O que podemos fazer com você?
+                </h3>
             </div>
 
             <!-- Grid de 4 imagens -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 w-full">
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 w-full"
+            >
                 <!-- Serviço 1 - Mentorias -->
-                <article class="relative h-[300px] sm:h-[350px] md:h-[400px] overflow-hidden group">
-                    <div class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all duration-300 z-5"></div>
+                <article
+                    class="relative h-[300px] sm:h-[350px] md:h-[400px] overflow-hidden group"
+                >
+                    <div
+                        class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all duration-300 z-5"
+                    >
+                    </div>
                     <img
-                        src={`${basePath}/img-mentorias.png`}
+                        src={`${basePath}/img-consultoria.jpg`}
                         alt="Profissional realizando mentoria sobre planejamento tributário de obras"
                         class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                         loading="lazy"
                         width="400"
                         height="400"
                     />
-                    <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white h-[120px] sm:h-[130px] md:h-[140px] flex flex-col z-10">
-                        <h4 class="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2 leading-tight h-12 sm:h-13 md:h-14">Consultoria em INSS de Obras</h4>
-                        <p class="text-xs sm:text-sm leading-relaxed">Orientação completa sobre contribuições previdenciárias e planejamento tributário para sua construção.</p>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white h-[120px] sm:h-[130px] md:h-[140px] flex flex-col z-10"
+                    >
+                        <h4
+                            class="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2 leading-tight h-12 sm:h-13 md:h-14"
+                        >
+                            Consultoria em INSS de Obras
+                        </h4>
+                        <p class="text-xs sm:text-sm leading-relaxed">
+                            Orientação completa sobre contribuições
+                            previdenciárias e planejamento tributário para sua
+                            construção.
+                        </p>
                     </div>
                 </article>
 
                 <!-- Serviço 2 - Planejamento -->
-                <article class="relative h-[300px] sm:h-[350px] md:h-[400px] overflow-hidden group">
-                    <div class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all duration-300 z-5"></div>
+                <article
+                    class="relative h-[300px] sm:h-[350px] md:h-[400px] overflow-hidden group"
+                >
+                    <div
+                        class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all duration-300 z-5"
+                    >
+                    </div>
                     <img
                         src={`${basePath}/img-planejamento.png`}
                         alt="Equipe fazendo planejamento tributário de obra"
@@ -243,15 +334,29 @@ const basePath = import.meta.env.BASE_URL;
                         width="400"
                         height="400"
                     />
-                    <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white h-[120px] sm:h-[130px] md:h-[140px] flex flex-col z-10">
-                        <h4 class="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2 leading-tight h-12 sm:h-13 md:h-14">Planejamento Tributário</h4>
-                        <p class="text-xs sm:text-sm leading-relaxed">Estratégias personalizadas para reduzir legalmente os custos com INSS na sua obra.</p>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white h-[120px] sm:h-[130px] md:h-[140px] flex flex-col z-10"
+                    >
+                        <h4
+                            class="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2 leading-tight h-12 sm:h-13 md:h-14"
+                        >
+                            Planejamento Tributário
+                        </h4>
+                        <p class="text-xs sm:text-sm leading-relaxed">
+                            Estratégias personalizadas para reduzir legalmente
+                            os custos com INSS na sua obra.
+                        </p>
                     </div>
                 </article>
 
                 <!-- Serviço 3 - Cálculo -->
-                <article class="relative h-[300px] sm:h-[350px] md:h-[400px] overflow-hidden group">
-                    <div class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all duration-300 z-5"></div>
+                <article
+                    class="relative h-[300px] sm:h-[350px] md:h-[400px] overflow-hidden group"
+                >
+                    <div
+                        class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all duration-300 z-5"
+                    >
+                    </div>
                     <img
                         src={`${basePath}/img-calculo.png`}
                         alt="Calculadora e documentos para cálculo de INSS de obra"
@@ -260,83 +365,173 @@ const basePath = import.meta.env.BASE_URL;
                         width="400"
                         height="400"
                     />
-                    <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white h-[120px] sm:h-[130px] md:h-[140px] flex flex-col z-10">
-                        <h4 class="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2 leading-tight h-12 sm:h-13 md:h-14">Análise de Custos Previdenciários</h4>
-                        <p class="text-xs sm:text-sm leading-relaxed">Cálculo preciso do INSS e identificação de oportunidades de economia legal.</p>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white h-[120px] sm:h-[130px] md:h-[140px] flex flex-col z-10"
+                    >
+                        <h4
+                            class="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2 leading-tight h-12 sm:h-13 md:h-14"
+                        >
+                            Análise de Custos Previdenciários
+                        </h4>
+                        <p class="text-xs sm:text-sm leading-relaxed">
+                            Cálculo preciso do INSS e identificação de
+                            oportunidades de economia legal.
+                        </p>
                     </div>
                 </article>
 
                 <!-- Serviço 4 - Gerenciamento -->
-                <article class="relative h-[300px] sm:h-[350px] md:h-[400px] overflow-hidden group">
-                    <div class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all duration-300 z-5"></div>
+                <article
+                    class="relative h-[300px] sm:h-[350px] md:h-[400px] overflow-hidden group"
+                >
+                    <div
+                        class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all duration-300 z-5"
+                    >
+                    </div>
                     <img
-                        src={`${basePath}/img-gerenciamento.png`}
+                        src={`${basePath}/img-gestao.png`}
                         alt="Gestão e gerenciamento de documentação tributária de obras"
                         class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                         loading="lazy"
                         width="400"
                         height="400"
                     />
-                    <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white h-[120px] sm:h-[130px] md:h-[140px] flex flex-col z-10">
-                        <h4 class="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2 leading-tight h-12 sm:h-13 md:h-14">Gestão Tributária de Projetos</h4>
-                        <p class="text-xs sm:text-sm leading-relaxed">Acompanhamento completo da documentação e conformidade tributária do seu projeto.</p>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white h-[120px] sm:h-[130px] md:h-[140px] flex flex-col z-10"
+                    >
+                        <h4
+                            class="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2 leading-tight h-12 sm:h-13 md:h-14"
+                        >
+                            Gestão Tributária de Projetos
+                        </h4>
+                        <p class="text-xs sm:text-sm leading-relaxed">
+                            Acompanhamento completo da documentação e
+                            conformidade tributária do seu projeto.
+                        </p>
                     </div>
                 </article>
             </div>
         </section>
 
         <!-- Seção Robustez e Inovação -->
-        <section class="w-full py-12 sm:py-16 md:py-20 fade-in-contrario" aria-label="Diferenciais">
-            <div class="flex flex-col items-center text-center gap-3 sm:gap-4 mb-8 sm:mb-10 px-4 sm:px-6 md:px-20 lg:px-40">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold gradient-text leading-[1.2] pb-2">
-                    Expertise e inovação na defesa dos<br />seus interesses
+        <section
+            class="w-full py-12 sm:py-16 md:py-20 fade-in-contrario"
+            aria-label="Diferenciais"
+        >
+            <div
+                class="flex flex-col items-center text-center gap-3 sm:gap-4 mb-8 sm:mb-10 px-4 sm:px-6 md:px-20 lg:px-40"
+            >
+                <h2
+                    class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold gradient-text leading-[1.2] pb-2"
+                >
+                    Reduza o INSS da sua obra com <br /> segurança e eficiência
                 </h2>
-                <div class="w-64 sm:w-80 md:w-96 h-1 bg-linear-to-r from-primary-color to-secondary-color rounded-full"></div>
-                <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold gradient-text">Legalize Obras trabalhando para você</h3>
+                <div
+                    class="w-64 sm:w-80 md:w-96 h-1 bg-linear-to-r from-primary-color to-secondary-color rounded-full"
+                >
+                </div>
+                <h3
+                    class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold gradient-text"
+                >
+                    Nossa experiência garante economia real e segurança jurídica
+                    para sua obra.
+                </h3>
             </div>
 
             <!-- Texto centralizado e justificado -->
             <article class="px-4 sm:px-6 md:px-20 lg:px-40 max-w-6xl mx-auto">
-                <p class="text-sm sm:text-base lg:text-lg font-normal text-neutral-700 text-justify leading-relaxed">
-                    Atuamos com metodologia própria que combina análise técnica aprofundada e conhecimento jurídico especializado em legislação previdenciária. Nossa abordagem permite identificar todas as possibilidades legais de redução do INSS de obra, considerando as particularidades de cada projeto. Utilizamos tecnologia de ponta para otimizar processos e garantir precisão nos cálculos, sempre mantendo transparência total com nossos clientes. O resultado é uma economia real e sustentável, com total segurança jurídica para sua empresa ou projeto pessoal.
+                <p
+                    class="text-sm sm:text-base lg:text-lg font-normal text-neutral-700 text-justify leading-relaxed"
+                >
+                    Nossa metodologia exclusiva é a ponte para a sua economia.
+                    Com expertise jurídica e análise técnica aprofundada, somos
+                    especialistas na aplicação do Fator de Ajuste, uma
+                    oportunidade legal que permite reduzir o INSS da sua obra em
+                    até 80%. Utilizamos tecnologia de ponta para assegurar a
+                    precisão dos cálculos e a total transparência, garantindo
+                    uma economia real e segura para sua empresa ou projeto.
                 </p>
             </article>
         </section>
 
         <!-- Seção Cards com Ícones -->
-        <section class="w-full pt-0 pb-12 sm:pb-16 md:pb-20 fade-in-contrario" aria-label="Nossos valores">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto px-4 sm:px-6 md:px-20 lg:px-40">
+        <section
+            class="w-full pt-0 pb-12 sm:pb-16 md:pb-20 fade-in-contrario"
+            aria-label="Nossos valores"
+        >
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto px-4 sm:px-6 md:px-20 lg:px-40"
+            >
                 <!-- Card 1 - Ética -->
-                <article class="bg-white rounded-lg shadow-lg p-6 sm:p-8 flex flex-col items-center text-center">
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-linear-90 from-primary-color to-secondary-color flex items-center justify-center mb-4 sm:mb-6">
-                        <span class="material-symbols-outlined text-white text-4xl sm:text-5xl" aria-hidden="true">
+                <article
+                    class="bg-white rounded-lg shadow-lg p-6 sm:p-8 flex flex-col items-center text-center"
+                >
+                    <div
+                        class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-linear-90 from-primary-color to-secondary-color flex items-center justify-center mb-4 sm:mb-6"
+                    >
+                        <span
+                            class="material-symbols-outlined text-white text-4xl sm:text-5xl"
+                            aria-hidden="true"
+                        >
                             verified
                         </span>
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold gradient-text mb-2 sm:mb-3">Conformidade Legal</h3>
-                    <p class="text-sm sm:text-base text-primary-color">Atuação 100% dentro da legislação tributária vigente.</p>
+                    <h3
+                        class="text-xl sm:text-2xl font-bold gradient-text mb-2 sm:mb-3"
+                    >
+                        Conformidade Legal
+                    </h3>
+                    <p class="text-sm sm:text-base text-primary-color">
+                        Atuação 100% dentro da legislação tributária vigente.
+                    </p>
                 </article>
 
                 <!-- Card 2 - Compromisso -->
-                <article class="bg-white rounded-lg shadow-lg p-6 sm:p-8 flex flex-col items-center text-center">
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-linear-90 from-primary-color to-secondary-color flex items-center justify-center mb-4 sm:mb-6">
-                        <span class="material-symbols-outlined text-white text-4xl sm:text-5xl" aria-hidden="true">
+                <article
+                    class="bg-white rounded-lg shadow-lg p-6 sm:p-8 flex flex-col items-center text-center"
+                >
+                    <div
+                        class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-linear-90 from-primary-color to-secondary-color flex items-center justify-center mb-4 sm:mb-6"
+                    >
+                        <span
+                            class="material-symbols-outlined text-white text-4xl sm:text-5xl"
+                            aria-hidden="true"
+                        >
                             handshake
                         </span>
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold gradient-text mb-2 sm:mb-3">Economia Real</h3>
-                    <p class="text-sm sm:text-base text-primary-color">Redução comprovada de até 80% nos custos com INSS.</p>
+                    <h3
+                        class="text-xl sm:text-2xl font-bold gradient-text mb-2 sm:mb-3"
+                    >
+                        Economia Real
+                    </h3>
+                    <p class="text-sm sm:text-base text-primary-color">
+                        Redução comprovada de até 80% nos custos com INSS.
+                    </p>
                 </article>
 
                 <!-- Card 3 - Inovação -->
-                <article class="bg-white rounded-lg shadow-lg p-6 sm:p-8 flex flex-col items-center text-center">
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-linear-90 from-primary-color to-secondary-color flex items-center justify-center mb-4 sm:mb-6">
-                        <span class="material-symbols-outlined text-white text-4xl sm:text-5xl" aria-hidden="true">
+                <article
+                    class="bg-white rounded-lg shadow-lg p-6 sm:p-8 flex flex-col items-center text-center"
+                >
+                    <div
+                        class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-linear-90 from-primary-color to-secondary-color flex items-center justify-center mb-4 sm:mb-6"
+                    >
+                        <span
+                            class="material-symbols-outlined text-white text-4xl sm:text-5xl"
+                            aria-hidden="true"
+                        >
                             lightbulb
                         </span>
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold gradient-text mb-2 sm:mb-3">Consultoria Especializada</h3>
-                    <p class="text-sm sm:text-base text-primary-color">Equipe experiente focada em construção civil.</p>
+                    <h3
+                        class="text-xl sm:text-2xl font-bold gradient-text mb-2 sm:mb-3"
+                    >
+                        Consultoria Especializada
+                    </h3>
+                    <p class="text-sm sm:text-base text-primary-color">
+                        Equipe experiente focada em construção civil.
+                    </p>
                 </article>
             </div>
         </section>
@@ -350,13 +545,13 @@ const basePath = import.meta.env.BASE_URL;
             const element = document.getElementById(id);
             if (!element) return;
 
-            const target = parseInt(element.getAttribute('data-target') || '0');
+            const target = parseInt(element.getAttribute("data-target") || "0");
             const textoOriginal = element.innerHTML;
-            
+
             for (let i = 0; i <= target; i++) {
                 setTimeout(() => {
-                    element.innerHTML = textoOriginal.includes('+') 
-                        ? `+${i}%` 
+                    element.innerHTML = textoOriginal.includes("+")
+                        ? `+${i}%`
                         : `${i}%`;
                 }, i * temp);
             }
@@ -365,39 +560,46 @@ const basePath = import.meta.env.BASE_URL;
         // Intersection Observer para animações SEO-friendly
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: "0px 0px -50px 0px",
         };
 
         const animateOnScroll = (entries: IntersectionObserverEntry[]) => {
-            entries.forEach(entry => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-on-scroll');
+                    entry.target.classList.add("animate-on-scroll");
                 }
             });
         };
 
-        const observer = new IntersectionObserver(animateOnScroll, observerOptions);
+        const observer = new IntersectionObserver(
+            animateOnScroll,
+            observerOptions,
+        );
 
         document.addEventListener("DOMContentLoaded", () => {
             // Observar elementos com animação
-            const elementsToAnimate = document.querySelectorAll('.fade-in-contrario');
-            elementsToAnimate.forEach(el => observer.observe(el));
+            const elementsToAnimate =
+                document.querySelectorAll(".fade-in-contrario");
+            elementsToAnimate.forEach((el) => observer.observe(el));
 
             // Animar números quando visíveis
-            const numberElements = document.querySelectorAll('[data-target]');
+            const numberElements = document.querySelectorAll("[data-target]");
             const numberObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                        entry.target.classList.add('animated');
+                entries.forEach((entry) => {
+                    if (
+                        entry.isIntersecting &&
+                        !entry.target.classList.contains("animated")
+                    ) {
+                        entry.target.classList.add("animated");
                         const id = entry.target.id;
-                        if (id === '200') animarNumero(id, 10);
-                        if (id === '50') animarNumero(id, 50);
-                        if (id === '40') animarNumero(id, 50);
+                        if (id === "200") animarNumero(id, 10);
+                        if (id === "50") animarNumero(id, 50);
+                        if (id === "40") animarNumero(id, 50);
                     }
                 });
             }, observerOptions);
 
-            numberElements.forEach(el => numberObserver.observe(el));
+            numberElements.forEach((el) => numberObserver.observe(el));
         });
     </script>
 </Layout>
