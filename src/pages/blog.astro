@@ -6,6 +6,11 @@ import ContactButton from '../components/ContactButton';
 const basePath = import.meta.env.BASE_URL;
 const API_URL = 'https://vps57731.publiccloud.com.br/blog';
 
+// SEO Meta Tags para Página Blog
+const pageTitle = "Blog - Legalize Obras | Guia de Legalização e Tributação de Obras";
+const pageDescription = "Seu guia definitivo para economia e segurança fiscal na construção civil. Artigos sobre INSS de obras, regularização, legislação e cases de sucesso em planejamento tributário.";
+const pageKeywords = "blog construção civil, artigos INSS obras, guia legalização obras, dicas tributação construção, cases sucesso obras";
+
 // Dados de exemplo para as postagens do blog
 let posts : any = []
 
@@ -20,7 +25,11 @@ try {
 const categories = ["Todas", "Economia", "Regularização", "Legislação", "Documentação", "Cases", "Gestão"];
 ---
 
-<Layout>
+<Layout 
+    title={pageTitle}
+    description={pageDescription}
+    keywords={pageKeywords}
+>
     <div class="w-full min-h-screen flex flex-col bg-gray-50">
         <!-- Hero Section -->
         <div class="relative">

@@ -1,7 +1,24 @@
 ---
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
+import VLibras from '../components/VLibras.astro';
 import "../main.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+	keywords?: string;
+	ogImage?: string;
+	canonicalURL?: string;
+}
+
+const {
+	title = "Legalize Obras - Reduza até 80% o INSS de Obra Legalmente",
+	description = "Especialistas em redução legal de INSS de obras. Economize até 80% nas contribuições previdenciárias com planejamento tributário especializado. Consultoria jurídica para construção civil.",
+	keywords = "INSS obra, redução INSS construção, consultoria tributária obras, planejamento tributário construção civil, economia INSS obra",
+	ogImage = "https://kaykyone.github.io/n-site-legalize-obras/img-logo.png",
+	canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+} = Astro.props;
 ---
 
 <html lang="pt-br">
@@ -11,55 +28,28 @@ import "../main.css";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+
 		<!-- SEO Meta Tags -->
-		<title>Legalize Obras - Reduza até 80% o INSS de Obra Legalmente</title>
-		<meta
-			name="description"
-			content="Especialistas em redução legal de INSS de obras. Economize até 80% nas contribuições previdenciárias com planejamento tributário especializado. Consultoria jurídica para construção civil."
-		/>
-		<meta
-			name="keywords"
-			content="INSS obra, redução INSS construção, consultoria tributária obras, planejamento tributário construção civil, economia INSS obra"
-		/>
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
 		<meta name="author" content="Legalize Obras" />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta
-			property="og:url"
-			content="https://kaykyone.github.io/n-site-legalize-obras/"
-		/>
-		<meta
-			property="og:title"
-			content="Legalize Obras - Reduza até 80% o INSS de Obra Legalmente"
-		/>
-		<meta
-			property="og:description"
-			content="Especialistas em redução legal de INSS de obras. Economize até 80% nas contribuições previdenciárias da sua construção."
-		/>
-		<meta
-			property="og:image"
-			content="https://kaykyone.github.io/n-site-legalize-obras/img-logo.png"
-		/>
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
-		<meta
-			property="twitter:url"
-			content="https://kaykyone.github.io/n-site-legalize-obras/"
-		/>
-		<meta
-			property="twitter:title"
-			content="Legalize Obras - Reduza até 80% o INSS de Obra Legalmente"
-		/>
-		<meta
-			property="twitter:description"
-			content="Especialistas em redução legal de INSS de obras. Economize até 80% nas contribuições previdenciárias."
-		/>
-		<meta
-			property="twitter:image"
-			content="https://kaykyone.github.io/n-site-legalize-obras/img-logo.png"
-		/>
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={ogImage} />
 
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -95,8 +85,12 @@ import "../main.css";
 	<body>
 		<main>
 			<Navbar client:load />
-			<slot />
+			<div class="pt-[70px]">
+				<slot />
+			</div>
 			<Footer />
 		</main>
+		<!-- VLibras Widget de Acessibilidade -->
+		<VLibras />
 	</body>
 </html>

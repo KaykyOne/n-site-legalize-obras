@@ -4,6 +4,11 @@ import ContactButton from "../components/ContactButton";
 
 const basePath = import.meta.env.BASE_URL;
 
+// SEO Meta Tags para Página Dúvidas
+const pageTitle = "Dúvidas Frequentes - Legalize Obras | FAQ sobre INSS e Legalização de Obras";
+const pageDescription = "Encontre respostas para as perguntas mais frequentes sobre legalização de obras, INSS de obra, regularização e aspectos legais. Tire suas dúvidas com especialistas.";
+const pageKeywords = "dúvidas INSS obra, FAQ legalização obras, perguntas regularização construção, dúvidas tributação obras, consulta especialista obras";
+
 // Perguntas e respostas organizadas por categoria
 const faqCategories = [
     {
@@ -94,7 +99,11 @@ const faqCategories = [
 
 ---
 
-<Layout>
+<Layout 
+    title={pageTitle}
+    description={pageDescription}
+    keywords={pageKeywords}
+>
     <div class="w-full min-h-screen flex flex-col pt-[70px]">
         <!-- Hero Section -->
         <div class="flex flex-col px-6 text-start items-start w-full md:px-20 lg:px-40">

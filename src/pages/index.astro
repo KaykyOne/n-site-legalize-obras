@@ -5,9 +5,18 @@ import Contact from "../components/contact";
 import ContactButton from "../components/ContactButton";
 
 const basePath = import.meta.env.BASE_URL;
+
+// SEO Meta Tags para Página Inicial
+const pageTitle = "Legalize Obras - Reduza até 80% o INSS de Obra Legalmente";
+const pageDescription = "Especialistas em redução legal de INSS de obras. Economize até 80% nas contribuições previdenciárias com planejamento tributário especializado. Consultoria jurídica para construção civil.";
+const pageKeywords = "INSS obra, redução INSS construção, consultoria tributária obras, planejamento tributário construção civil, economia INSS obra, fator de ajuste INSS";
 ---
 
-<Layout>
+<Layout 
+    title={pageTitle}
+    description={pageDescription}
+    keywords={pageKeywords}
+>
     <div class="w-full min-h-screen flex flex-col">
         <div class="relative">
             <div class="absolute w-full h-full">

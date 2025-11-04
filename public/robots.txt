@@ -1,0 +1,15 @@
+# Robots.txt para Legalize Obras
+# Permite indexação de todas as páginas importantes
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kaykyone.github.io/n-site-legalize-obras/sitemap.xml
+
+# Bloquear crawlers indesejados (opcional)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
