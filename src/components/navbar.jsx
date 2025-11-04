@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Button from './button'
+import ContactButton from './ContactButton'
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,10 +15,10 @@ export default function Navbar() {
                 <a href={`${basePath}/duvidas`} className='hover:border-b'>Dúvidas</a>
                 <a href={`${basePath}/blog`} className='hover:border-b'>Blog</a>
                 <a className='w-full pl-5 pr-5'>
-                    <Button type={'whatsapp'} className='!w-full'>
+                    <ContactButton type={'whatsapp'} className='w-full!'>
                         <img src={`${basePath}/icon-whatsapp.png`} alt="WhatsApp Icon" className='w-5 h-5 mr-2' />
                         Contato
-                    </Button>
+                    </ContactButton>
                 </a>
 
             </nav >
@@ -41,10 +41,10 @@ export default function Navbar() {
                         <a href={`${basePath}/duvidas`} className='hover:border-b'>Dúvidas</a>
                         <a href={`${basePath}/blog`} className='hover:border-b'>Blog</a>
                     </nav >
-                    <Button type={'whatsapp'} className='hidden lg:flex'>
+                    <ContactButton type={'whatsapp'} className='hidden lg:flex'>
                         <img src={`${basePath}/icon-whatsapp.png`} alt="WhatsApp Icon" className='w-5 h-5 mr-2' />
                         Contato
-                    </Button>
+                    </ContactButton>
                     <button
                         onClick={() => setIsOpen(!isOpen)}
                         className='flex lg:hidden text-white hover:scale-105 hover:rotate-90 transition-all duration-300 cursor-pointer'>

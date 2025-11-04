@@ -1,7 +1,7 @@
 ---
-import Footer from "../components/footer"
-import Navbar from "../components/navbar"
-import '../main.css';
+import Footer from "../components/footer";
+import Navbar from "../components/navbar";
+import "../main.css";
 ---
 
 <html lang="pt-br">
@@ -10,53 +10,93 @@ import '../main.css';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		
+
 		<!-- SEO Meta Tags -->
 		<title>Legalize Obras - Reduza até 80% o INSS de Obra Legalmente</title>
-		<meta name="description" content="Especialistas em redução legal de INSS de obras. Economize até 80% nas contribuições previdenciárias com planejamento tributário especializado. Consultoria jurídica para construção civil." />
-		<meta name="keywords" content="INSS obra, redução INSS construção, consultoria tributária obras, planejamento tributário construção civil, economia INSS obra" />
+		<meta
+			name="description"
+			content="Especialistas em redução legal de INSS de obras. Economize até 80% nas contribuições previdenciárias com planejamento tributário especializado. Consultoria jurídica para construção civil."
+		/>
+		<meta
+			name="keywords"
+			content="INSS obra, redução INSS construção, consultoria tributária obras, planejamento tributário construção civil, economia INSS obra"
+		/>
 		<meta name="author" content="Legalize Obras" />
-		
+
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://kaykyone.github.io/n-site-legalize-obras/" />
-		<meta property="og:title" content="Legalize Obras - Reduza até 80% o INSS de Obra Legalmente" />
-		<meta property="og:description" content="Especialistas em redução legal de INSS de obras. Economize até 80% nas contribuições previdenciárias da sua construção." />
-		<meta property="og:image" content="https://kaykyone.github.io/n-site-legalize-obras/img-logo.png" />
-		
+		<meta
+			property="og:url"
+			content="https://kaykyone.github.io/n-site-legalize-obras/"
+		/>
+		<meta
+			property="og:title"
+			content="Legalize Obras - Reduza até 80% o INSS de Obra Legalmente"
+		/>
+		<meta
+			property="og:description"
+			content="Especialistas em redução legal de INSS de obras. Economize até 80% nas contribuições previdenciárias da sua construção."
+		/>
+		<meta
+			property="og:image"
+			content="https://kaykyone.github.io/n-site-legalize-obras/img-logo.png"
+		/>
+
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content="https://kaykyone.github.io/n-site-legalize-obras/" />
-		<meta property="twitter:title" content="Legalize Obras - Reduza até 80% o INSS de Obra Legalmente" />
-		<meta property="twitter:description" content="Especialistas em redução legal de INSS de obras. Economize até 80% nas contribuições previdenciárias." />
-		<meta property="twitter:image" content="https://kaykyone.github.io/n-site-legalize-obras/img-logo.png" />
-		
+		<meta
+			property="twitter:url"
+			content="https://kaykyone.github.io/n-site-legalize-obras/"
+		/>
+		<meta
+			property="twitter:title"
+			content="Legalize Obras - Reduza até 80% o INSS de Obra Legalmente"
+		/>
+		<meta
+			property="twitter:description"
+			content="Especialistas em redução legal de INSS de obras. Economize até 80% nas contribuições previdenciárias."
+		/>
+		<meta
+			property="twitter:image"
+			content="https://kaykyone.github.io/n-site-legalize-obras/img-logo.png"
+		/>
+
 		<!-- Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-		
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+		/>
+
 		<!-- Schema.org JSON-LD -->
 		<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "ProfessionalService",
-			"name": "Legalize Obras",
-			"description": "Consultoria especializada em redução legal de INSS de obras e planejamento tributário para construção civil",
-			"url": "https://kaykyone.github.io/n-site-legalize-obras/",
-			"telephone": "+55-XX-XXXXX-XXXX",
-			"areaServed": "BR",
-			"serviceType": ["Consultoria Tributária", "Planejamento de Obras", "Redução de INSS"],
-			"priceRange": "$$"
-		}
+			{
+				"@context": "https://schema.org",
+				"@type": "ProfessionalService",
+				"name": "Legalize Obras",
+				"description": "Consultoria especializada em redução legal de INSS de obras e planejamento tributário para construção civil",
+				"url": "https://kaykyone.github.io/n-site-legalize-obras/",
+				"telephone": "+55-XX-XXXXX-XXXX",
+				"areaServed": "BR",
+				"serviceType": [
+					"Consultoria Tributária",
+					"Planejamento de Obras",
+					"Redução de INSS"
+				],
+				"priceRange": "$$"
+			}
 		</script>
 	</head>
 	<body>
-		<Navbar client:load/>
-		<main class="pt-[70px]">
+		<main>
+			<Navbar client:load />
 			<slot />
+			<Footer />
 		</main>
-		<Footer/>
 	</body>
 </html>

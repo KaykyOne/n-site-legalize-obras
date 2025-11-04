@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import ReactDOM from "react-dom";
 // Ícones SVG das redes sociais
 const SocialIcons = {
     instagram: () => (
@@ -40,6 +40,9 @@ const SocialIcons = {
 };
 
 export default function ContactModal({ isOpen, onClose }) {
+
+     if (!isOpen) return null;
+
     const [formData, setFormData] = useState({
         nome: '',
         problema: '',
@@ -92,9 +95,9 @@ export default function ContactModal({ isOpen, onClose }) {
 
     if (!isOpen) return null;
 
-    return (
+    return ReactDOM.createPortal (
         <div 
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 h-screen w-screen"
             onClick={onClose}
         >
             <div 
@@ -107,7 +110,7 @@ export default function ContactModal({ isOpen, onClose }) {
                         <h2 className="text-2xl sm:text-3xl font-bold text-white">Entre em Contato</h2>
                         <button 
                             onClick={onClose}
-                            className="text-white hover:text-white/80 transition-colors text-4xl leading-none font-light -mt-2"
+                            className="text-white hover:text-white/80 transition-colors text-4xl leading-none font-light -mt-2 cursor-pointer"
                             aria-label="Fechar modal"
                         >
                             ×
@@ -217,6 +220,7 @@ export default function ContactModal({ isOpen, onClose }) {
                     </div>
                 </form>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 }

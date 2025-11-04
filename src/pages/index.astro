@@ -58,14 +58,14 @@ const basePath = import.meta.env.BASE_URL;
                     >
                         <Button
                             type={"primario"}
-                            className={"!text-lg sm:!text-xl !font-normal !uppercase w-full sm:w-auto"}
+                            className={"text-lg! sm:text-xl! font-normal! uppercase! w-full sm:w-auto"}
                         >
                             Saiba Mais
                         </Button>
                         <ContactButton 
                             client:load
                             type="transparente"
-                            className="!text-lg sm:!text-xl !font-normal !uppercase flex items-center justify-center w-full sm:w-auto"
+                            className="text-lg! sm:text-xl! font-normal! uppercase! flex items-center justify-center w-full sm:w-auto"
                         >
                             <img
                                 src={`${basePath}/icon-whatsapp.png`}
@@ -113,9 +113,10 @@ const basePath = import.meta.env.BASE_URL;
                                 legislação vigente — sem riscos e sem surpresas.
                             </p>
                         </div>
-                        <Button
-                            type={"transparente"}
-                            className={"!text-lg sm:!text-xl !font-normal !uppercase flex items-center justify-center"}
+                        <ContactButton 
+                            client:load
+                            type="transparente"
+                            className="text-lg! sm:text-xl! font-normal! uppercase! flex items-center justify-center"
                         >
                             <img
                                 src={`${basePath}/icon-whatsapp.png`}
@@ -125,7 +126,7 @@ const basePath = import.meta.env.BASE_URL;
                                 height="20"
                             />
                             FALE COM UM ESPECIALISTA
-                        </Button>
+                        </ContactButton>
                     </div>
                 </div>
 

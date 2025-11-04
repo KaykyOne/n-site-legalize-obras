@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/button';
+import ContactButton from '../components/ContactButton';
 
 const basePath = import.meta.env.BASE_URL;
 const API_URL = 'https://vps57731.publiccloud.com.br/blog';
@@ -117,9 +118,10 @@ const categories = ["Todas", "Economia", "Regularização", "Legislação", "Doc
                     Nossos especialistas farão o <strong>Diagnóstico Gratuito</strong> da sua construção. Sem compromisso e com garantia de segurança fiscal.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Button
-                        type={"transparente"}
-                        className={"text-lg! sm:text-xl! font-normal! uppercase! flex items-center justify-center"}
+                    <ContactButton
+                        client:load
+                        type="transparente"
+                        className="text-lg! sm:text-xl! font-normal! uppercase! flex items-center justify-center"
                     >
                         <img
                             src={`${basePath}/icon-whatsapp.png`}
@@ -127,7 +129,7 @@ const categories = ["Todas", "Economia", "Regularização", "Legislação", "Doc
                             class="w-5 h-5 mr-2 group-hover:invert"
                         />
                         SIMULE SUA ECONOMIA GRÁTIS AGORA
-                    </Button>
+                    </ContactButton>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Button from "../components/button";
+import ContactButton from "../components/ContactButton";
 
 const basePath = import.meta.env.BASE_URL;
 
@@ -159,12 +159,13 @@ const faqCategories = [
                    Fale com a nossa equipe multidisciplinar. Estamos prontos para resolver o seu caso específico.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Button
-                        type={"primario"}
-                        className={"text-lg! sm:text-xl! font-normal! uppercase!"}
+                    <ContactButton
+                        client:load
+                        type="primario"
+                        className="text-lg sm:text-xl font-normal uppercase"
                     >
                         QUERO ESCLARECER MINHA DÚVIDA
-                    </Button>
+                    </ContactButton>
                 </div>
             </div>
         </div>
@@ -178,9 +179,10 @@ const faqCategories = [
                 <p class="text-lg mb-8 text-gray-200">
                     Descubra o potencial de redução de até 80% no INSS da sua obra, com segurança e garantia em contrato.
                 </p>
-                <Button
-                    type={"transparente"}
-                    className={"text-lg! sm:text-xl! font-normal! uppercase! flex items-center justify-center mx-auto"}
+                <ContactButton
+                    client:load
+                    type="transparente"
+                    className="text-lg sm:text-xl font-normal uppercase flex items-center justify-center mx-auto"
                 >
                     <img
                         src={`${basePath}/icon-whatsapp.png`}
@@ -188,7 +190,7 @@ const faqCategories = [
                         class="w-5 h-5 mr-2 group-hover:invert"
                     />
                     SIMULE SUA ECONOMIA GRÁTIS AGORA
-                </Button>
+                </ContactButton>
             </div>
         </div>
     </div>
