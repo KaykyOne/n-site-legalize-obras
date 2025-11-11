@@ -1,0 +1,485 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactButton from "../components/ContactButton";
+
+// SEO Meta Tags - Página de Redução Legal de INSS de Obras
+const pageTitle = "Especialistas em redução legal de INSS de obras | Legalize Obras";
+const pageDescription = "Especialistas em redução legal de INSS de obras. Economize até 80% com planejamento tributário estratégico. Avaliação gratuita.";
+const pageKeywords = "especialistas em redução legal de INSS de obras, redução de INSS em obras, planejamento tributário obras, revisão de encargos sociais, otimização de encargos trabalhistas, enquadramento previdenciário de obra, rateio de INSS, procedimentos legais INSS obras";
+const canonicalURL = "https://legalizeobras.com.br/reducao-legal-inss-obras";
+const ogImage = "https://legalizeobras.com.br/img-reducao-inss.jpg";
+
+// Schema JSON-LD
+const schemaOrganization = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Legalize Obras",
+	"description": "Especialistas em redução legal de INSS de obras e planejamento tributário para construção civil",
+	"url": canonicalURL,
+	"areaServed": "BR",
+	"serviceType": "Redução legal de INSS de obras",
+	"priceRange": "Sob consulta"
+};
+
+const schemaFAQ = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "O que é a redução legal de INSS de obras?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "A redução legal de INSS de obras é um mecanismo previsto na legislação tributária brasileira que permite às empresas de construção civil diminuir a base de cálculo das contribuições previdenciárias sobre mão de obra. Por meio de análise técnica e aplicação correta dos critérios legais, é possível reduzir custos mantendo total conformidade com a Receita Federal."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Quais obras podem se beneficiar da redução de INSS?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Obras de construção civil, reformas, ampliações e projetos de infraestrutura podem se beneficiar. A elegibilidade depende de análise técnica da natureza dos serviços, estrutura de contratação e características específicas do projeto. Nossos especialistas avaliam cada caso individualmente para identificar as melhores oportunidades de economia."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "A redução de INSS em canteiro de obras é legal e segura?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sim. A redução legal de INSS obras é fundamentada em normativos da Receita Federal e jurisprudência consolidada. Nosso trabalho consiste em aplicar corretamente os dispositivos legais existentes, garantindo economia real sem riscos de autuação ou penalidades. Toda estratégia é documentada e baseada em análise jurídica sólida."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Qual é o potencial de economia com a redução legal de INSS?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "O potencial de economia varia conforme as características de cada obra, mas tipicamente alcança reduções entre 40% e 80% nas contribuições previdenciárias. O percentual exato depende de análise detalhada da estrutura da obra, tipo de contratação e outros fatores técnicos que nossos especialistas avaliam no estudo de viabilidade."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Como funciona o processo de recuperação de créditos de INSS?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "A recuperação de créditos permite resgatar valores pagos indevidamente em obras anteriores. Após análise retroativa da documentação, identificamos oportunidades de recuperação tributária. O processo envolve levantamento documental, cálculos técnicos e procedimentos administrativos junto à Receita Federal, com possibilidade de compensação ou restituição dos valores."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Quanto tempo demora para implementar a redução de INSS na obra?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "O prazo médio para implementação varia entre 15 e 45 dias, dependendo da complexidade da obra e disponibilidade documental. Nossa metodologia ágil permite iniciar a economia rapidamente. Após a análise inicial e estudo de viabilidade, a aplicação prática das estratégias pode começar imediatamente, gerando economia já no mês seguinte."
+			}
+		}
+	]
+};
+
+const schemaWebPage = {
+	"@context": "https://schema.org",
+	"@type": "WebPage",
+	"name": pageTitle,
+	"description": pageDescription,
+	"url": canonicalURL
+};
+---
+
+<Layout 
+    title={pageTitle}
+    description={pageDescription}
+    keywords={pageKeywords}
+	canonicalURL={canonicalURL}
+	ogImage={ogImage}
+>
+	<!-- Schema Markup -->
+	<script type="application/ld+json" set:html={JSON.stringify(schemaOrganization)} />
+	<script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
+	<script type="application/ld+json" set:html={JSON.stringify(schemaWebPage)} />
+
+	<div class="w-full min-h-screen flex flex-col">
+		<!-- Hero Section -->
+		<section class="relative bg-linear-0 from-secondary-color to-primary-color text-white py-20 sm:py-28 md:py-32 px-4 sm:px-6 md:px-20 lg:px-40" aria-label="Introdução">
+			<div class="max-w-5xl mx-auto">
+				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+					Especialistas em redução legal de INSS de obras
+				</h1>
+				<p class="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
+					Economize até 80% nas contribuições previdenciárias com planejamento tributário estratégico. Nossa expertise jurídica e técnica garante conformidade total e economia real para sua construção.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 mt-8">
+					<ContactButton 
+						client:load
+						type="transparente"
+						className="text-lg! font-semibold! px-8! py-4! border-2! border-white! hover:bg-white! hover:text-primary-color! transition-all! flex items-center justify-center"
+					>
+						SOLICITAR AVALIAÇÃO GRATUITA
+					</ContactButton>
+					<a 
+						href="/sobre" 
+						class="text-lg font-semibold px-8 py-4 bg-white text-primary-color rounded hover:bg-gray-100 transition-all text-center"
+					>
+						CONHEÇA NOSSO TRABALHO
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Conteúdo Principal -->
+		<article class="px-4 sm:px-6 md:px-20 lg:px-40 py-12 sm:py-16 md:py-20">
+			<div class="max-w-4xl mx-auto">
+				<!-- Introdução -->
+				<section class="mb-12">
+					<p class="text-lg leading-relaxed text-neutral-700 text-justify mb-6">
+						<strong>Especialistas em redução legal de INSS de obras</strong>, oferecemos soluções estratégicas de planejamento tributário que permitem às construtoras, incorporadoras e gestores de projetos de construção civil reduzirem significativamente os custos com contribuições previdenciárias, mantendo total conformidade com a legislação vigente.
+					</p>
+					<p class="text-base leading-relaxed text-neutral-700 text-justify mb-6">
+						Com mais de 12 anos de experiência no mercado, nossa equipe multidisciplinar combina conhecimento jurídico, contábil e técnico para identificar oportunidades legais de otimização tributária. Atuamos em todo o Brasil, atendendo desde pequenas reformas até grandes empreendimentos de infraestrutura, sempre com foco em segurança jurídica e economia real.
+					</p>
+				</section>
+
+				<!-- O que é a redução legal de INSS -->
+				<section class="mb-12">
+					<h2 class="text-3xl sm:text-4xl font-bold gradient-text mb-6">
+						O que é a redução legal de INSS em obras?
+					</h2>
+					<div class="w-32 h-1 bg-linear-to-r from-primary-color to-secondary-color rounded-full mb-6"></div>
+					<p class="text-base leading-relaxed text-neutral-700 text-justify mb-4">
+						A redução legal de INSS de obras é um mecanismo previsto na legislação tributária brasileira que permite às empresas de construção civil diminuir a base de cálculo das contribuições previdenciárias sobre mão de obra. Através da correta aplicação de critérios técnicos e jurídicos, é possível reduzir significativamente o montante devido, sem violar nenhuma norma legal.
+					</p>
+					<p class="text-base leading-relaxed text-neutral-700 text-justify mb-4">
+						Esse benefício se baseia em dispositivos normativos que reconhecem particularidades da atividade de construção civil, permitindo ajustes na apuração dos encargos sociais. Entre os principais mecanismos utilizados estão: aplicação correta de alíquotas diferenciadas, rateio adequado de despesas administrativas, enquadramento preciso das atividades desempenhadas e utilização de regimes tributários específicos para o setor.
+					</p>
+					<div class="bg-blue-50 border-l-4 border-primary-color p-6 rounded-r-lg mt-6">
+						<p class="text-sm text-neutral-600 italic">
+							<strong>Importante:</strong> Todas as estratégias adotadas são fundamentadas em análise jurídica detalhada e nas normas vigentes da Receita Federal, garantindo segurança e conformidade em cada etapa do processo.
+						</p>
+					</div>
+				</section>
+
+				<!-- Quando e como é aplicável -->
+				<section class="mb-12">
+					<h2 class="text-3xl sm:text-4xl font-bold gradient-text mb-6">
+						Quando e como é aplicável?
+					</h2>
+					<div class="w-32 h-1 bg-linear-to-r from-primary-color to-secondary-color rounded-full mb-6"></div>
+					<p class="text-base leading-relaxed text-neutral-700 text-justify mb-6">
+						A redução legal de INSS em canteiro de obras pode ser aplicada em diversos cenários da construção civil, desde que atendidos critérios específicos de elegibilidade:
+					</p>
+					<ul class="list-none space-y-4 mb-6">
+						<li class="flex items-start gap-3">
+							<span class="material-symbols-outlined text-primary-color text-2xl shrink-0 mt-1">check_circle</span>
+							<div>
+								<strong class="text-primary-color">Obras de construção civil:</strong>
+								<span class="text-neutral-700"> Edificações residenciais, comerciais, industriais e de infraestrutura.</span>
+							</div>
+						</li>
+						<li class="flex items-start gap-3">
+							<span class="material-symbols-outlined text-primary-color text-2xl shrink-0 mt-1">check_circle</span>
+							<div>
+								<strong class="text-primary-color">Reformas e ampliações:</strong>
+								<span class="text-neutral-700"> Projetos de modernização e expansão de imóveis existentes.</span>
+							</div>
+						</li>
+						<li class="flex items-start gap-3">
+							<span class="material-symbols-outlined text-primary-color text-2xl shrink-0 mt-1">check_circle</span>
+							<div>
+								<strong class="text-primary-color">Obras de infraestrutura:</strong>
+								<span class="text-neutral-700"> Rodovias, pontes, viadutos, saneamento e obras públicas.</span>
+							</div>
+						</li>
+						<li class="flex items-start gap-3">
+							<span class="material-symbols-outlined text-primary-color text-2xl shrink-0 mt-1">check_circle</span>
+							<div>
+								<strong class="text-primary-color">Projetos de incorporação:</strong>
+								<span class="text-neutral-700"> Empreendimentos imobiliários de médio e grande porte.</span>
+							</div>
+						</li>
+					</ul>
+					<p class="text-base leading-relaxed text-neutral-700 text-justify">
+						A aplicabilidade depende de análise técnica minuciosa da estrutura jurídica da empresa, modelo de contratação de mão de obra, características do projeto e atividades desenvolvidas. Nossos especialistas realizam diagnóstico completo antes de propor qualquer estratégia, garantindo que a solução seja perfeitamente adequada à realidade de cada cliente.
+					</p>
+				</section>
+
+				<!-- Nosso passo a passo -->
+				<section class="mb-12">
+					<h2 class="text-3xl sm:text-4xl font-bold gradient-text mb-6">
+						Nosso passo a passo de trabalho
+					</h2>
+					<div class="w-32 h-1 bg-linear-to-r from-primary-color to-secondary-color rounded-full mb-6"></div>
+					<p class="text-base leading-relaxed text-neutral-700 text-justify mb-8">
+						Nossa metodologia estruturada garante resultados consistentes e seguros. Acompanhe as etapas do nosso processo:
+					</p>
+					<div class="space-y-6">
+						<div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+							<div class="flex items-start gap-4">
+								<div class="bg-primary-color text-white rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">1</div>
+								<div>
+									<h3 class="text-xl font-bold text-primary-color mb-2">Diagnóstico Inicial</h3>
+									<p class="text-neutral-700">Reunião técnica para entender as características da obra, modelo de negócio e objetivos do cliente. Coleta preliminar de documentação.</p>
+								</div>
+							</div>
+						</div>
+						<div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+							<div class="flex items-start gap-4">
+								<div class="bg-primary-color text-white rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">2</div>
+								<div>
+									<h3 class="text-xl font-bold text-primary-color mb-2">Análise Técnica e Jurídica</h3>
+									<p class="text-neutral-700">Avaliação detalhada da estrutura tributária atual, identificação de oportunidades legais de redução e mapeamento de riscos.</p>
+								</div>
+							</div>
+						</div>
+						<div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+							<div class="flex items-start gap-4">
+								<div class="bg-primary-color text-white rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">3</div>
+								<div>
+									<h3 class="text-xl font-bold text-primary-color mb-2">Estudo de Viabilidade</h3>
+									<p class="text-neutral-700">Elaboração de relatório técnico com projeção de economia, fundamentação legal completa e recomendações estratégicas personalizadas.</p>
+								</div>
+							</div>
+						</div>
+						<div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+							<div class="flex items-start gap-4">
+								<div class="bg-primary-color text-white rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">4</div>
+								<div>
+									<h3 class="text-xl font-bold text-primary-color mb-2">Implementação</h3>
+									<p class="text-neutral-700">Aplicação prática das estratégias aprovadas, adequação de processos internos e orientação às equipes contábil e administrativa.</p>
+								</div>
+							</div>
+						</div>
+						<div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+							<div class="flex items-start gap-4">
+								<div class="bg-primary-color text-white rounded-full w-10 h-10 flex items-center justify-center font-bold shrink-0">5</div>
+								<div>
+									<h3 class="text-xl font-bold text-primary-color mb-2">Acompanhamento Contínuo</h3>
+									<p class="text-neutral-700">Monitoramento mensal dos resultados, ajustes quando necessário e suporte técnico permanente para dúvidas e atualizações legais.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Benefícios e Resultados -->
+				<section class="mb-12">
+					<h2 class="text-3xl sm:text-4xl font-bold gradient-text mb-6">
+						Benefícios e resultados para sua obra
+					</h2>
+					<div class="w-32 h-1 bg-linear-to-r from-primary-color to-secondary-color rounded-full mb-6"></div>
+					<p class="text-base leading-relaxed text-neutral-700 text-justify mb-6">
+						A aplicação correta do planejamento tributário obras gera impactos diretos na saúde financeira do projeto. Nossos clientes experimentam:
+					</p>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+						<div class="bg-linear-to-br from-blue-50 to-white border border-blue-100 rounded-lg p-6">
+							<span class="material-symbols-outlined text-primary-color text-4xl mb-3">savings</span>
+							<h3 class="text-xl font-bold text-primary-color mb-2">Redução de até 80% no INSS</h3>
+							<p class="text-neutral-700 text-sm">Economia substancial nas contribuições previdenciárias, liberando capital para outras áreas do projeto.</p>
+						</div>
+						<div class="bg-linear-to-br from-blue-50 to-white border border-blue-100 rounded-lg p-6">
+							<span class="material-symbols-outlined text-primary-color text-4xl mb-3">verified_user</span>
+							<h3 class="text-xl font-bold text-primary-color mb-2">Segurança Jurídica Total</h3>
+							<p class="text-neutral-700 text-sm">Todas as estratégias fundamentadas em análise legal robusta, eliminando riscos de autuação.</p>
+						</div>
+						<div class="bg-linear-to-br from-blue-50 to-white border border-blue-100 rounded-lg p-6">
+							<span class="material-symbols-outlined text-primary-color text-4xl mb-3">speed</span>
+							<h3 class="text-xl font-bold text-primary-color mb-2">Implementação Ágil</h3>
+							<p class="text-neutral-700 text-sm">Processos otimizados que permitem economia já no primeiro mês após implementação.</p>
+						</div>
+						<div class="bg-linear-to-br from-blue-50 to-white border border-blue-100 rounded-lg p-6">
+							<span class="material-symbols-outlined text-primary-color text-4xl mb-3">trending_up</span>
+							<h3 class="text-xl font-bold text-primary-color mb-2">ROI Comprovado</h3>
+							<p class="text-neutral-700 text-sm">Retorno sobre investimento superior a 200%, com economia mensal recorrente.</p>
+						</div>
+					</div>
+
+					<!-- Estudos de Caso Ilustrativos -->
+					<div class="bg-gray-50 border-l-4 border-primary-color p-6 rounded-r-lg mb-6">
+						<h3 class="text-lg font-bold text-primary-color mb-4">Exemplos Ilustrativos de Economia</h3>
+						<div class="space-y-4">
+							<div class="bg-white p-4 rounded border border-gray-200">
+								<p class="text-sm text-neutral-700 mb-2">
+									<strong>Caso 1 - Incorporadora de médio porte:</strong> Empreendimento residencial de 120 unidades. Após análise técnica e implementação das estratégias de otimização de encargos trabalhistas, o cliente alcançou redução de 65% nas contribuições previdenciárias, representando economia estimada de R$ 280 mil ao longo da obra.
+								</p>
+								<p class="text-xs text-neutral-500 italic">*Exemplo ilustrativo. Resultados dependem de análise técnica individualizada.</p>
+							</div>
+							<div class="bg-white p-4 rounded border border-gray-200">
+								<p class="text-sm text-neutral-700 mb-2">
+									<strong>Caso 2 - Construtora de infraestrutura:</strong> Obra rodoviária com duração de 18 meses. A aplicação do enquadramento previdenciário de obra adequado resultou em redução de 72% nos custos com INSS, gerando economia potencial superior a R$ 1,2 milhão no período.
+								</p>
+								<p class="text-xs text-neutral-500 italic">*Exemplo ilustrativo. Recomendamos avaliação técnica antes de qualquer decisão.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- FAQ Section -->
+				<section class="mb-12" id="perguntas-frequentes">
+					<h2 class="text-3xl sm:text-4xl font-bold gradient-text mb-6">
+						Perguntas frequentes (FAQ)
+					</h2>
+					<div class="w-32 h-1 bg-linear-to-r from-primary-color to-secondary-color rounded-full mb-8"></div>
+					<div class="space-y-4">
+						<!-- FAQ 1 -->
+						<details class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow group">
+							<summary class="font-bold text-lg text-primary-color cursor-pointer list-none flex items-center justify-between">
+								O que é a redução legal de INSS de obras?
+								<span class="material-symbols-outlined text-primary-color group-open:rotate-180 transition-transform">expand_more</span>
+							</summary>
+							<p class="text-neutral-700 mt-4 text-justify leading-relaxed">
+								A redução legal de INSS de obras é um mecanismo previsto na legislação tributária brasileira que permite às empresas de construção civil diminuir a base de cálculo das contribuições previdenciárias sobre mão de obra. Por meio de análise técnica e aplicação correta dos critérios legais, é possível reduzir custos mantendo total conformidade com a Receita Federal.
+							</p>
+						</details>
+
+						<!-- FAQ 2 -->
+						<details class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow group">
+							<summary class="font-bold text-lg text-primary-color cursor-pointer list-none flex items-center justify-between">
+								Quais obras podem se beneficiar da redução de INSS?
+								<span class="material-symbols-outlined text-primary-color group-open:rotate-180 transition-transform">expand_more</span>
+							</summary>
+							<p class="text-neutral-700 mt-4 text-justify leading-relaxed">
+								Obras de construção civil, reformas, ampliações e projetos de infraestrutura podem se beneficiar. A elegibilidade depende de análise técnica da natureza dos serviços, estrutura de contratação e características específicas do projeto. Nossos especialistas avaliam cada caso individualmente para identificar as melhores oportunidades de economia.
+							</p>
+						</details>
+
+						<!-- FAQ 3 -->
+						<details class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow group">
+							<summary class="font-bold text-lg text-primary-color cursor-pointer list-none flex items-center justify-between">
+								A redução de INSS em canteiro de obras é legal e segura?
+								<span class="material-symbols-outlined text-primary-color group-open:rotate-180 transition-transform">expand_more</span>
+							</summary>
+							<p class="text-neutral-700 mt-4 text-justify leading-relaxed">
+								Sim. A redução legal de INSS obras é fundamentada em normativos da Receita Federal e jurisprudência consolidada. Nosso trabalho consiste em aplicar corretamente os dispositivos legais existentes, garantindo economia real sem riscos de autuação ou penalidades. Toda estratégia é documentada e baseada em análise jurídica sólida.
+							</p>
+						</details>
+
+						<!-- FAQ 4 -->
+						<details class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow group">
+							<summary class="font-bold text-lg text-primary-color cursor-pointer list-none flex items-center justify-between">
+								Qual é o potencial de economia com a redução legal de INSS?
+								<span class="material-symbols-outlined text-primary-color group-open:rotate-180 transition-transform">expand_more</span>
+							</summary>
+							<p class="text-neutral-700 mt-4 text-justify leading-relaxed">
+								O potencial de economia varia conforme as características de cada obra, mas tipicamente alcança reduções entre 40% e 80% nas contribuições previdenciárias. O percentual exato depende de análise detalhada da estrutura da obra, tipo de contratação e outros fatores técnicos que nossos especialistas avaliam no estudo de viabilidade.
+							</p>
+						</details>
+
+						<!-- FAQ 5 -->
+						<details class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow group">
+							<summary class="font-bold text-lg text-primary-color cursor-pointer list-none flex items-center justify-between">
+								Como funciona o processo de recuperação de créditos de INSS?
+								<span class="material-symbols-outlined text-primary-color group-open:rotate-180 transition-transform">expand_more</span>
+							</summary>
+							<p class="text-neutral-700 mt-4 text-justify leading-relaxed">
+								A recuperação de créditos permite resgatar valores pagos indevidamente em obras anteriores. Após análise retroativa da documentação, identificamos oportunidades de recuperação tributária. O processo envolve levantamento documental, cálculos técnicos e procedimentos administrativos junto à Receita Federal, com possibilidade de compensação ou restituição dos valores.
+							</p>
+						</details>
+
+						<!-- FAQ 6 -->
+						<details class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow group">
+							<summary class="font-bold text-lg text-primary-color cursor-pointer list-none flex items-center justify-between">
+								Quanto tempo demora para implementar a redução de INSS na obra?
+								<span class="material-symbols-outlined text-primary-color group-open:rotate-180 transition-transform">expand_more</span>
+							</summary>
+							<p class="text-neutral-700 mt-4 text-justify leading-relaxed">
+								O prazo médio para implementação varia entre 15 e 45 dias, dependendo da complexidade da obra e disponibilidade documental. Nossa metodologia ágil permite iniciar a economia rapidamente. Após a análise inicial e estudo de viabilidade, a aplicação prática das estratégias pode começar imediatamente, gerando economia já no mês seguinte.
+							</p>
+						</details>
+					</div>
+				</section>
+
+				<!-- Disclaimer Legal -->
+				<section class="mb-12">
+					<div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg">
+						<div class="flex items-start gap-3">
+							<span class="material-symbols-outlined text-yellow-600 text-2xl shrink-0">info</span>
+							<div>
+								<h3 class="font-bold text-yellow-800 mb-2">Aviso Legal e Compliance</h3>
+								<p class="text-sm text-yellow-800 leading-relaxed">
+									O conteúdo apresentado nesta página possui caráter exclusivamente informativo e educacional. Cada projeto de construção civil possui características únicas que demandam análise técnica, jurídica e contábil personalizada. Os percentuais de economia mencionados são exemplos ilustrativos baseados em casos reais, mas não constituem garantia de resultados idênticos. Recomendamos fortemente que qualquer decisão sobre planejamento tributário seja precedida de avaliação detalhada por profissionais especializados. Nossa equipe está à disposição para realizar diagnóstico sem compromisso e apresentar soluções customizadas para sua realidade.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- CTA Final -->
+				<section class="bg-linear-90 from-primary-color to-secondary-color text-white rounded-lg p-8 sm:p-12 text-center">
+					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+						Pronto para reduzir custos na sua obra?
+					</h2>
+					<p class="text-lg sm:text-xl mb-8 text-gray-100">
+						Agende uma avaliação técnica gratuita e descubra quanto você pode economizar
+					</p>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+						<ContactButton 
+							client:load
+							type="transparente"
+							className="text-lg! font-semibold! px-8! py-4! bg-white! text-primary-color! hover:bg-gray-100! transition-all! flex items-center justify-center border-0!"
+						>
+							<span class="material-symbols-outlined mr-2">calendar_month</span>
+							AGENDAR AVALIAÇÃO GRATUITA
+						</ContactButton>
+						<ContactButton 
+							client:load
+							type="transparente"
+							className="text-lg! font-semibold! px-8! py-4! border-2! border-white! hover:bg-white/10! transition-all! flex items-center justify-center"
+						>
+							<img
+								src="/icon-whatsapp.png"
+								alt="WhatsApp"
+								class="w-5 h-5 mr-2 group-hover:invert"
+								width="20"
+								height="20"
+							/>
+							FALAR COM ESPECIALISTA
+						</ContactButton>
+					</div>
+					<p class="text-sm text-gray-200 mt-6">
+						Atendimento em todo o Brasil • Resposta em até 24 horas
+					</p>
+				</section>
+			</div>
+		</article>
+
+		<!-- Seção de Links Internos Sugeridos -->
+		<section class="bg-gray-50 py-12 px-4 sm:px-6 md:px-20 lg:px-40">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-2xl sm:text-3xl font-bold gradient-text mb-8 text-center">
+					Conheça mais sobre nossos serviços
+				</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<a href="/" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow border border-gray-200 group">
+						<span class="material-symbols-outlined text-primary-color text-4xl mb-3 group-hover:scale-110 transition-transform inline-block">home</span>
+						<h3 class="font-bold text-primary-color mb-2">Página Inicial</h3>
+						<p class="text-sm text-neutral-600">Conheça a Legalize Obras e nossos diferenciais</p>
+					</a>
+					<a href="/sobre" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow border border-gray-200 group">
+						<span class="material-symbols-outlined text-primary-color text-4xl mb-3 group-hover:scale-110 transition-transform inline-block">info</span>
+						<h3 class="font-bold text-primary-color mb-2">Sobre Nós</h3>
+						<p class="text-sm text-neutral-600">Nossa história e casos de sucesso</p>
+					</a>
+					<a href="/blog" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow border border-gray-200 group">
+						<span class="material-symbols-outlined text-primary-color text-4xl mb-3 group-hover:scale-110 transition-transform inline-block">article</span>
+						<h3 class="font-bold text-primary-color mb-2">Blog e Artigos</h3>
+						<p class="text-sm text-neutral-600">Conteúdos sobre tributação e obras</p>
+					</a>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<script>
+		// Smooth scroll para âncoras
+		document.addEventListener("DOMContentLoaded", () => {
+			const links = document.querySelectorAll('a[href^="#"]');
+			links.forEach(link => {
+				link.addEventListener("click", (e) => {
+					e.preventDefault();
+					const target = document.querySelector(link.getAttribute("href") as string);
+					if (target) {
+						target.scrollIntoView({ behavior: "smooth", block: "start" });
+					}
+				});
+			});
+		});
+	</script>
+</Layout>

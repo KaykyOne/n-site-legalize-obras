@@ -1,8 +1,5 @@
 import React from 'react'
 
-// Base path para GitHub Pages
-const basePath = '/n-site-legalize-obras';
-
 export default function Footer() {
     return (
         <footer className='bg-black w-full flex flex-col gap-10 items-center justify-center px-6 md:px-20 lg:px-40 text-white min-h-[300px] pt-10 pb-10'>
@@ -29,10 +26,10 @@ export default function Footer() {
                     </div>
 
                     <div className='h-full w-full flex flex-col gap-2 text-sm items-center sm:items-start'>
-                        <a href={`${basePath}/`} className='hover:text-primary-color transition-colors'>Home</a>
-                        <a href={`${basePath}/sobre`} className='hover:text-primary-color transition-colors'>Sobre</a>
-                        <a href={`${basePath}/duvidas`} className='hover:text-primary-color transition-colors'>Dúvidas</a>
-                        <a href={`${basePath}/blog`} className='hover:text-primary-color transition-colors'>Blog</a>
+                        <a href="/" className='hover:text-primary-color transition-colors'>Home</a>
+                        <a href="/sobre" className='hover:text-primary-color transition-colors'>Sobre</a>
+                        <a href="/duvidas" className='hover:text-primary-color transition-colors'>Dúvidas</a>
+                        <a href="/blog" className='hover:text-primary-color transition-colors'>Blog</a>
                     </div>
                 </div>
             </div>

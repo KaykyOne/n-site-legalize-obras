@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const basePath = import.meta.env.BASE_URL;
+
 
 // SEO Meta Tags para Página Sobre
 const pageTitle = "Sobre Nós - Legalize Obras | 12 Anos de Experiência em Planejamento Tributário";
@@ -20,7 +20,7 @@ const pageKeywords = "sobre legalize obras, consultoria tributária construção
                 class="relative flex flex-col rounded-full w-[120px] h-[120px] overflow-hidden shadow-xl border-4 border-primary-color"
             >
                 <img
-                    src={`${basePath}/img-logo.png`}
+                    src={`/img-logo.png`}
                     alt="Logo Legalize Obras - Consultoria em INSS de Obras"
                     class="w-full h-full object-cover"
                     width="120"
@@ -107,3 +107,4 @@ const pageKeywords = "sobre legalize obras, consultoria tributária construção
         </div>
     </article>
 </Layout>
+

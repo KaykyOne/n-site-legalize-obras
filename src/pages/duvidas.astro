@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import ContactButton from "../components/ContactButton";
 
-const basePath = import.meta.env.BASE_URL;
+
 
 // SEO Meta Tags para Página Dúvidas
 const pageTitle = "Dúvidas Frequentes - Legalize Obras | FAQ sobre INSS e Legalização de Obras";
@@ -194,7 +194,7 @@ const faqCategories = [
                     className="text-lg sm:text-xl font-normal uppercase flex items-center justify-center mx-auto"
                 >
                     <img
-                        src={`${basePath}/icon-whatsapp.png`}
+                        src={`/icon-whatsapp.png`}
                         alt="WhatsApp Icon"
                         class="w-5 h-5 mr-2 group-hover:invert"
                     />
@@ -230,3 +230,4 @@ const faqCategories = [
         });
     });
 </script>
+

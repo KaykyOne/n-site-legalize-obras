@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://kaykyone.github.io/n-site-legalize-obras/sitemap.xml
+Sitemap: https://legalizeobras.com.br/sitemap.xml
 
 # Bloquear crawlers indesejados (opcional)
 User-agent: AhrefsBot
