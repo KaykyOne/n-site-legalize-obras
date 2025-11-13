@@ -3,19 +3,36 @@ import Layout from "../../layouts/Layout.astro";
 import Button from "../../components/button";
 import ContactButton from "../../components/ContactButton";
 import {
-    WhatsappShareButton,
-    WhatsappIcon,
-    FacebookShareButton,
-    FacebookIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  InstapaperIcon,
+  InstapaperShareButton,
+  FacebookShareButton,
+  FacebookIcon,
 } from "react-share";
+
+const API_URL = 'https://vps62603.publiccloud.com.br';
+
+export async function getStaticPaths() {
+  try {
+    const res = await fetch(`https://vps62603.publiccloud.com.br/api/posts?populate=*`);
+    const data = await res.json();
+    const posts = data.data || [];
+
+    return posts.map((p: any) => ({
+      params: { id: p.id.toString() },
+    }));
+  } catch (error) {
+    console.error("Erro ao gerar caminhos:", error);
+    return [];
+  }
+}
 
 const basePath = import.meta.env.BASE_URL;
 const { id } = Astro.params;
-const API_URL = 'https://vps57731.publiccloud.com.br/blog';
 
-// Dados de exemplo para as postagens do blog
-let posts : any = []
-
+// Agora sim, esse trecho roda na renderização individual da página
+let posts: any = [];
 try {
   const res = await fetch(`${API_URL}/api/posts?populate=*`);
   const data = await res.json();
@@ -24,30 +41,20 @@ try {
   console.error("Erro ao buscar posts:", error);
 }
 
-// Buscar o post pelo ID
 const post = posts.find((p: any) => p.id === parseInt(id || "0"));
-
-// Se o post não existir, redirecionar para a página de blog
 if (!post) {
-    return Astro.redirect(`${basePath}blog`);
+  return Astro.redirect(`${basePath}blog`);
 }
 
-// Posts relacionados (mesma categoria, excluindo o atual)
 const relatedPosts = posts
-    .filter((p: any) => p.category === post.category && p.id !== post.id)
-    .slice(0, 3);
+  .filter((p: any) => p.category === post.category && p.id !== post.id)
+  .slice(0, 3);
 
-export async function getStaticPaths() {
-    return [
-        { params: { id: "1" } },
-        { params: { id: "2" } },
-        { params: { id: "3" } },
-        { params: { id: "4" } },
-        { params: { id: "5" } },
-        { params: { id: "6" } },
-    ];
-}
+
+
+const readTime = post.content.split(' ').length / 200;
 ---
+
 
 <Layout>
     <div class="w-full min-h-screen bg-gray-50">
@@ -60,7 +67,7 @@ export async function getStaticPaths() {
                 </div>
                 <img
                     class="w-full h-full object-cover"
-                    src={post.image}
+                    src={`${API_URL}${post.coverImage.url}`}
                     alt={post.title}
                 />
             </div>
@@ -96,7 +103,7 @@ export async function getStaticPaths() {
 
                 <!-- Título -->
                 <h1
-                    class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl"
+                    class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl capitalize"
                 >
                     {post.title}
                 </h1>
@@ -105,28 +112,19 @@ export async function getStaticPaths() {
                 <div class="flex flex-wrap items-center gap-6 text-gray-200">
                     <div class="flex items-center gap-2">
                         <span class="material-symbols-outlined">person</span>
-                        <span>{post.author}</span>
+                        <span>Legalize obras</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="material-symbols-outlined"
                             >calendar_today</span
                         >
                         <span
-                            >{
-                                new Date(post.date).toLocaleDateString(
-                                    "pt-BR",
-                                    {
-                                        day: "numeric",
-                                        month: "long",
-                                        year: "numeric",
-                                    },
-                                )
-                            }</span
+                            >{new Date(post.publicadoEm).toLocaleDateString('pt-BR')}</span
                         >
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="material-symbols-outlined">schedule</span>
-                        <span>{post.readTime} de leitura</span>
+                        <span>{readTime.toFixed(0)} min de leitura</span>
                     </div>
                 </div>
             </div>
@@ -139,7 +137,7 @@ export async function getStaticPaths() {
                 <div
                     class="bg-primary-color/10 border-l-4 border-primary-color p-6 mb-8 rounded-r-lg"
                 >
-                    <p class="text-lg text-gray-700 italic">
+                    <p class="text-lg text-gray-700 italic capitalize">
                         {post.excerpt}
                     </p>
                 </div>
@@ -158,10 +156,6 @@ export async function getStaticPaths() {
                         <WhatsappShareButton url={import.meta.url} title={"blog"}>
                             <WhatsappIcon size={32} round />
                         </WhatsappShareButton>
-
-                        <FacebookShareButton url={import.meta.url} title={"blog"}>
-                            <FacebookIcon size={32} round />
-                        </FacebookShareButton>
                     </div>
                 </div>
             </div>
@@ -204,7 +198,7 @@ export async function getStaticPaths() {
                                     </h3>
 
                                     <a
-                                        href={`${basePath}blog/${relatedPost.id}`}
+                                        href={`${basePath}/blog/${relatedPost.id}`}
                                         class="inline-flex items-center gap-2 text-primary-color font-semibold text-sm uppercase hover:gap-3 transition-all duration-200"
                                     >
                                         Ler mais
@@ -240,14 +234,9 @@ export async function getStaticPaths() {
                         type="transparente"
                         className="text-lg! sm:text-xl! font-normal! uppercase! flex items-center justify-center"
                     >
-                        <img
-                            src={`${basePath}/icon-whatsapp.png`}
-                            alt="WhatsApp Icon"
-                            class="w-5 h-5 mr-2 group-hover:invert"
-                        />
                         FALE COM UM ESPECIALISTA
                     </ContactButton>
-                    <Button type={"whatsapp"} href={`${basePath}/blog`}>
+                    <Button type={"whatsapp"} href={`./`}>
                         Voltar ao Blog
                     </Button>
                 </div>

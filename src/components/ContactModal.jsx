@@ -81,7 +81,7 @@ export default function ContactModal({ isOpen, onClose }) {
                         `📱 *Como conheceu:* ${redeSocialSelecionada?.label || formData.comoConheceu}`;
 
         // Número do WhatsApp (substitua pelo número real da empresa)
-        const numeroWhatsApp = '5517997419297'; // Formato: código país + DDD + número
+        const numeroWhatsApp = '5517996696293'; // Formato: código país + DDD + número
         const mensagemCodificada = encodeURIComponent(mensagem);
         const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
 
