@@ -6,9 +6,12 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "npm run build && node ./dist/server/entry.mjs",
+    "prod": "NODE_ENV=production HOST=0.0.0.0 PORT=4321 node ./dist/server/entry.mjs"
   },
   "dependencies": {
+    "@astrojs/node": "^9.5.0",
     "@astrojs/react": "^4.4.0",
     "@tailwindcss/vite": "^4.1.16",
     "@types/react": "^19.2.2",
@@ -16,6 +19,7 @@
     "astro": "^5.15.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.6",
     "react-share": "^5.2.2"
   }
 }
