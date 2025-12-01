@@ -1,8 +1,35 @@
 import { useEffect, useState } from "react";
-import {
-  WhatsappShareButton,
-  WhatsappIcon,
-} from "react-share";
+
+// Lazy load para react-share (problema com SSR)
+const WhatsappShareButton = ({ url, title, children }: any) => {
+  const [isClient, setIsClient] = useState(false);
+  const [Component, setComponent] = useState<any>(null);
+
+  useEffect(() => {
+    setIsClient(true);
+    import("react-share").then(module => {
+      setComponent(() => module.WhatsappShareButton);
+    });
+  }, []);
+
+  if (!isClient || !Component) return <>{children}</>;
+  return <Component url={url} title={title}>{children}</Component>;
+};
+
+const WhatsappIcon = (props: any) => {
+  const [isClient, setIsClient] = useState(false);
+  const [Component, setComponent] = useState<any>(null);
+
+  useEffect(() => {
+    setIsClient(true);
+    import("react-share").then(module => {
+      setComponent(() => module.WhatsappIcon);
+    });
+  }, []);
+
+  if (!isClient || !Component) return null;
+  return <Component {...props} />;
+};
 
 
 const API_URL = "https://vps62603.publiccloud.com.br";
