@@ -1,7 +1,7 @@
 ---
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import VLibras from '../components/VLibras.astro';
+import VLibras from "../components/VLibras.astro";
 import "../main.css";
 
 interface Props {
@@ -24,7 +24,21 @@ const {
 <html lang="pt-br">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon3.png" sizes="48x48" type="image/png">
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicon-16x16.png"
+		/>
+		<link rel="shortcut icon" href="/favicon.ico" />
+
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 
@@ -71,7 +85,7 @@ const {
 				"name": "Legalize Obras",
 				"description": "Consultoria especializada em redução legal de INSS de obras e planejamento tributário para construção civil",
 				"url": "https://legalizeobras.com.br/",
-				"telephone": "+55-XX-XXXXX-XXXX",
+				"telephone": "+55-17-99669-6293",
 				"areaServed": "BR",
 				"serviceType": [
 					"Consultoria Tributária",
