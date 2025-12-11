@@ -3,6 +3,8 @@ import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import VLibras from "../components/VLibras.astro";
 import "../main.css";
+import MetaPixelConsent from "../components/MetaPixelConsent.astro";
+import CookieConsent from "../components/CookieConsent.astro";
 
 interface Props {
 	title?: string;
@@ -76,7 +78,7 @@ const {
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
 		/>
-
+		<MetaPixelConsent />
 		<!-- Schema.org JSON-LD -->
 		<script type="application/ld+json">
 			{
@@ -106,5 +108,7 @@ const {
 		</main>
 		<!-- VLibras Widget de Acessibilidade -->
 		<VLibras />
+		<!-- Banner de Consentimento de Cookies -->
+		<CookieConsent />
 	</body>
 </html>

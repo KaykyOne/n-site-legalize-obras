@@ -1,0 +1,36 @@
+---
+// consent-based pixel: injeta apenas um pequeno script no head que, no cliente, verifica consentimento e carrega o fbevents.js
+const PIXEL_ID = import.meta.env.PUBLIC_META_PIXEL_ID;
+---
+{PIXEL_ID ? (
+  <>
+    <script is:inline define:vars={{ PIXEL_ID }}>
+      (function(){
+        function loadPixel(){
+          if(window.fbq) return;
+          var t = document.createElement('script');
+          t.async = true;
+          t.src = 'https://connect.facebook.net/en_US/fbevents.js';
+          document.head.appendChild(t);
+          window.fbq = window.fbq || function(){ (window.fbq.q = window.fbq.q || []).push(arguments); };
+          fbq('init', PIXEL_ID);
+          fbq('track', 'PageView');
+        }
+        try {
+          var consent = localStorage.getItem('ads_consent');
+          if(consent === 'true') {
+            loadPixel();
+          } else {
+            window.addEventListener('adsConsentGiven', loadPixel);
+          }
+        } catch(e) {
+          console.warn('Pixel consent check failed', e);
+        }
+      })();
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" alt=""
+           src={`https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1`}/>
+    </noscript>
+  </>
+) : null}
