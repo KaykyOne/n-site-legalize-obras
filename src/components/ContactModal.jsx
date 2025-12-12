@@ -75,10 +75,10 @@ export default function ContactModal({ isOpen, onClose }) {
 
         // Formatar mensagem para WhatsApp
         const redeSocialSelecionada = redesSociais.find(r => r.value === formData.comoConheceu);
-        const mensagem = `*Nova solicitação de contato*\n\n` +
-                        `- *Nome:* ${formData.nome}\n\n` +
-                        `- *Problema/Dúvida:*\n${formData.problema}\n\n` +
-                        `- *Como conheceu:* ${redeSocialSelecionada?.label || formData.comoConheceu}`;
+        const mensagem = `*NOVA solicitação de contato*\n\n` +
+                        `*Nome:* ${formData.nome}\n\n` +
+                        `*Problema/Dúvida:*\n${formData.problema}\n\n` +
+                        `*Como conheceu:* ${redeSocialSelecionada?.label || formData.comoConheceu}`;
 
         // Número do WhatsApp (substitua pelo número real da empresa)
         const numeroWhatsApp = '5517996696293'; // Formato: código país + DDD + número
