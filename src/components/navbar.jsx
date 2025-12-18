@@ -11,6 +11,7 @@ export default function Navbar() {
                 <a href="/sobre" className='hover:border-b'>Sobre</a>
                 <a href="/reducao-legal-inss-obras" className='hover:border-b'>Redução INSS</a>
                 <a href="/duvidas" className='hover:border-b'>Dúvidas</a>
+                <a href="/parceiros" className='hover:border-b'>Parceiros</a>
                 <a href="/blog" className='hover:border-b'>Blog</a>
                 <a className='w-full pl-5 pr-5'>
                     <ContactButton type={'whatsapp'} className='w-full!'>
@@ -38,6 +39,7 @@ export default function Navbar() {
                         <a href="/sobre" className='hover:border-b'>Sobre</a>
                         <a href="/reducao-legal-inss-obras" className='hover:border-b'>Redução INSS</a>
                         <a href="/duvidas" className='hover:border-b'>Dúvidas</a>
+                        <a href="/parceiros" className='hover:border-b'>Parceiros</a>
                         <a href="/blog" className='hover:border-b'>Blog</a>
                     </nav >
                     <ContactButton type={'whatsapp'} className='hidden lg:flex'>

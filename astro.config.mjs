@@ -14,8 +14,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     ssr: {
-      // Força bundling das dependências, mas exclui react-share que tem problemas com SSR
-      noExternal: ['react', 'react-dom'],
+      // noExternal: ['react', 'react-dom'],
       external: ['react-share']
     }
   },

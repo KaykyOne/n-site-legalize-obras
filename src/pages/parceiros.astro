@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Esta página pode ser pré-renderizada (estática)
+export const prerender = true;
+
+// SEO Meta Tags para Página de Parceiros
+const pageTitle = "Nossos Parceiros - Legalize Obras";
+const pageDescription =
+    "Conheça os parceiros da Legalize Obras. Trabalhamos com profissionais e empresas de excelência para oferecer o melhor serviço em planejamento tributário.";
+const pageKeywords =
+    "parceiros legalize obras, parceiros construção civil, empresas parceiras, profissionais parceiros";
+
+// Lista de parceiros
+const parceiros = [
+    {
+        nome: "Matheus Casagrande",
+        imagem: "/parceiros/matheus.jpg",
+        link: "https://www.instagram.com/casagrande.eng/",
+    },
+
+    {
+        nome: "Gaut Arquitetura",
+        imagem: "/parceiros/GautArquitetura.jpg",
+        link: "https://www.instagram.com/gaut.arquitetura/",
+    },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
+    <main
+        class="w-full min-h-screen flex flex-col items-center justify-center fade-in-contrario py-12 px-4"
+    >
+        <div
+            class="flex flex-col w-full items-center justify-center gap-8 max-w-[1000px]"
+        >
+            <div class="flex flex-col gap-2 text-center">
+                <h1
+                    class="text-4xl sm:text-5xl uppercase font-bold gradient-text"
+                >
+                    Nossos Parceiros
+                </h1>
+                <p class="text-neutral-500 text-lg sm:text-xl max-w-[600px]">
+                    Empresas e profissionais que confiam no nosso trabalho
+                </p>
+            </div>
+
+            <section
+                class="flex flex-wrap justify-center items-center gap-6 mt-8 w-full"
+            >
+                {
+                    parceiros.map((parceiro) => (
+                        <a href={parceiro.link} class="bg-white shadow-lg p-6 flex flex-col gap-4 rounded-xl border border-neutral-200 hover:shadow-xl hover:scale-105 transition-all duration-300 items-center justify-center" target="_blank" rel="noopener noreferrer">
+                            <div class="w-[250px] h-[250px] rounded-full overflow-hidden bg-neutral-100 flex items-center justify-center border-2 border-primary-color">
+                                <img
+                                    src={parceiro.imagem}
+                                    alt={`Logo ${parceiro.nome}`}
+                                    class="w-full h-full object-cover"
+                                    width="80"
+                                    height="80"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <h2 class="text-2xl font-semibold text-neutral-700 text-center">
+                                {parceiro.nome}
+                            </h2>
+                            <p class="text-neutral-500">Clique para saber +</p>
+                        </a>
+                    ))
+                }
+            </section>
+        </div>
+    </main>
+</Layout>
