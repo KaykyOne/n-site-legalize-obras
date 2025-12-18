@@ -14,7 +14,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     ssr: {
-      // noExternal: ['react', 'react-dom'],
+      noExternal: ['react', 'react-dom'],
       external: ['react-share']
     }
   },
