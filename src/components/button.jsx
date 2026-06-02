@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Button({children, type, className = "", ...props}) {
 
 const cssPadrao = "flex w-fit pl-10 pr-10 gap-2 items-center justify-center cursor-pointer rounded-sm font-semibold hover:scale-105 transform transition-transform duration-200 ease-in-out hover:opacity-90";
